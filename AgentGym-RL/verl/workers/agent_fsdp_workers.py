@@ -42,6 +42,7 @@ from codetiming import Timer
 
 logger = logging.getLogger(__file__)
 logger.setLevel(os.getenv('VERL_PPO_LOGGING_LEVEL', 'WARN'))
+DEFAULT_ATTN_IMPLEMENTATION = os.getenv('VERL_ATTN_IMPLEMENTATION', 'sdpa')
 
 
 def create_device_mesh(world_size, fsdp_size):
@@ -194,7 +195,7 @@ class ActorRolloutRefWorker(Worker):
             actor_module = AutoModelForCausalLM.from_pretrained(pretrained_model_name_or_path=local_path,
                                                                 torch_dtype=torch_dtype,
                                                                 config=actor_model_config,
-                                                                attn_implementation='flash_attention_2',
+                                                                attn_implementation=DEFAULT_ATTN_IMPLEMENTATION,
                                                                 trust_remote_code=trust_remote_code)
             # Apply Liger kernel to the model if use_liger is set to True
             if use_liger:
@@ -661,7 +662,7 @@ class CriticWorker(Worker):
             critic_module = AutoModelForTokenClassification.from_pretrained(pretrained_model_name_or_path=local_path,
                                                                             torch_dtype=torch_dtype,
                                                                             config=critic_model_config,
-                                                                            attn_implementation='flash_attention_2',
+                                                                            attn_implementation=DEFAULT_ATTN_IMPLEMENTATION,
                                                                             trust_remote_code=trust_remote_code)
 
             # some parameters may not in torch_dtype

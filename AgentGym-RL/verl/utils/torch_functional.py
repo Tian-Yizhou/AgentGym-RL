@@ -78,6 +78,7 @@ def logprobs_from_logits_v2(logits: torch.FloatTensor, labels):
     """
     A memory efficient implementation of logprobs_from_logits
     """
+    labels = labels.long()
     if logits.dtype in [torch.float32, torch.float64]:
         logits_labels = torch.gather(logits, dim=-1, index=labels.unsqueeze(-1)).squeeze(-1)
         # loop to reduce peak mem consumption

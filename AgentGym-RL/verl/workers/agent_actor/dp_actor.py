@@ -31,7 +31,17 @@ from verl.utils.ulysses import ulysses_pad_and_slice_inputs, gather_outpus_and_u
 from verl.utils.seqlen_balancing import rearrange_micro_batches, get_reverse_idx
 import verl.utils.torch_functional as verl_F
 
-from flash_attn.bert_padding import pad_input, unpad_input, rearrange, index_first_axis
+try:
+    from flash_attn.bert_padding import pad_input, unpad_input, rearrange, index_first_axis
+except Exception as exc:
+    from einops import rearrange
+
+    pad_input = None
+    unpad_input = None
+    index_first_axis = None
+    _FLASH_ATTN_IMPORT_ERROR = exc
+else:
+    _FLASH_ATTN_IMPORT_ERROR = None
 
 __all__ = ['DataParallelPPOActor']
 
@@ -49,6 +59,8 @@ class DataParallelPPOActor(BasePPOActor):
         self.actor_module = actor_module
         self.actor_optimizer = actor_optimizer
         self.use_remove_padding = self.config.get('use_remove_padding', False)
+        if self.use_remove_padding and _FLASH_ATTN_IMPORT_ERROR is not None:
+            raise ImportError("flash-attn is required when use_remove_padding=True") from _FLASH_ATTN_IMPORT_ERROR
         print(f'Actor use_remove_padding={self.use_remove_padding}')
         self.ulysses_sequence_parallel_size = self.config.ulysses_sequence_parallel_size
         self.use_ulysses_sp = self.ulysses_sequence_parallel_size > 1
