@@ -1,0 +1,1 @@
+srun --account=e52938 --partition=gengpu --nodes=1 --ntasks=4 --gres=gpu:a100:1 --time=02:00:00 --pty bash
