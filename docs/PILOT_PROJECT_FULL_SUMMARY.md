@@ -11,43 +11,28 @@ Completed:
 - BabyAI benchmark-scale RL run completed with about 302 parsed training steps.
 - TextWorldExpress was added as a new environment.
 - TextWorldExpress smoke run completed.
+- TextWorldExpress benchmark-scale RL run completed with about 319 parsed training steps.
 - TextWorldExpress baseline was improved with valid-action canonicalization.
 - Training metrics, curves, and case studies are generated under `pilot_outputs/final_artifacts/`.
 
-Currently running:
-
-```bash
-squeue -j 7111047
-```
-
-Job:
+Final TextWorldExpress benchmark job:
 
 ```text
 7111047 twx_bench
 ```
 
-Purpose:
+Configuration:
 
 - Long TextWorldExpress benchmark-scale run.
 - 256 item IDs, batch size 4, 5 epochs.
-- Expected training steps: about `256 / 4 * 5 = 320`.
+- Parsed training steps: 319.
 
-Progress at last check:
-
-```text
-Elapsed: about 50 minutes
-Latest rollout output: step113
-Estimated total time: about 2.4 hours
-Estimated remaining: about 1.5 hours
-```
-
-Check progress:
+Final checks:
 
 ```bash
-squeue -j 7111047 -o '%i %P %j %u %t %M %l %D %R'
+sacct -j 7111047 --format=JobID,JobName,State,ExitCode,Elapsed,NodeList
+grep -n "step:" slurm_logs/twx_bench-7111047.out | wc -l
 find saves/textworldexpress_benchmark_7111047/executer_logs -maxdepth 1 -type d -name 'step*' | wc -l
-grep -n "step:" slurm_logs/twx_bench-7111047.out | tail
-tail -f slurm_logs/twx_bench-7111047.err
 ```
 
 ## 1. Project Goal
@@ -531,7 +516,7 @@ Benchmark-scale run:
 sbatch slurm/textworldexpress_rl_benchmark.sbatch
 ```
 
-Current job:
+Successful job:
 
 ```text
 7111047
@@ -550,7 +535,13 @@ ROLLOUT_N=2
 Expected steps:
 
 ```text
-256 / 4 * 5 = 320
+256 / 4 * 5 = about 320
+```
+
+Parsed steps:
+
+```text
+319
 ```
 
 ## 9. Artifact Generation
@@ -572,26 +563,18 @@ Current files:
 ```text
 babyai_benchmark_metrics.csv
 babyai_smoke_metrics.csv
-textworldexpress_metrics.csv
+textworldexpress_benchmark_metrics.csv
+textworldexpress_smoke_metrics.csv
 babyai_smoke_training_curves.png
 babyai_benchmark_training_curves.png
-textworldexpress_training_curves.png
+textworldexpress_smoke_training_curves.png
+textworldexpress_benchmark_training_curves.png
 smoke_comparison_training_curves.png
 case_studies.md
 completion_report.md
 ```
 
-Important note:
-
-- The current TextWorldExpress plot is still from the short smoke run.
-- After `7111047` finishes, update `scripts/build_pilot_artifacts.py` to parse:
-
-```text
-slurm_logs/twx_bench-7111047.out
-saves/textworldexpress_benchmark_7111047/
-```
-
-Then rerun:
+Final regeneration command:
 
 ```bash
 conda run -n agentgym-rl python scripts/build_pilot_artifacts.py
@@ -705,32 +688,35 @@ Count TextWorldExpress progress:
 find saves/textworldexpress_benchmark_7111047/executer_logs -maxdepth 1 -type d -name 'step*' | wc -l
 ```
 
-## 13. What To Do After `7111047` Finishes
+## 13. Final Verification
 
-1. Confirm job completion:
+Confirm job completion:
 
 ```bash
-squeue -j 7111047
 sacct -j 7111047 --format=JobID,JobName,State,ExitCode,Elapsed,NodeList
 ```
 
-2. Count metrics:
+Count metrics:
 
 ```bash
-grep -n "step:" slurm_logs/twx_bench-7111047.out | wc -l
+wc -l pilot_outputs/final_artifacts/*metrics.csv
 ```
 
-3. Update artifact script to use `twx_bench-7111047.out`.
-
-4. Regenerate plots:
+Regenerate plots:
 
 ```bash
 conda run -n agentgym-rl python scripts/build_pilot_artifacts.py
 ```
 
-5. Check final plots:
+Check final plots:
 
 ```bash
 ls -lh pilot_outputs/final_artifacts/*curves.png
 ```
 
+Final artifact status:
+
+- BabyAI benchmark metrics: 302 parsed training steps.
+- TextWorldExpress benchmark metrics: 319 parsed training steps.
+- Separate curves are generated for each run.
+- BabyAI smoke and TextWorldExpress smoke are also compared in one combined smoke plot.

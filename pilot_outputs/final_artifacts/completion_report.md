@@ -9,7 +9,8 @@
 - Requirement 2, training curves: completed.
   - `babyai_smoke_training_curves.png`
   - `babyai_benchmark_training_curves.png`
-  - `textworldexpress_training_curves.png`
+  - `textworldexpress_smoke_training_curves.png`
+  - `textworldexpress_benchmark_training_curves.png`
   - `smoke_comparison_training_curves.png`
   - CSV files under this directory.
 - Requirement 3, case studies: completed.
@@ -25,6 +26,7 @@
 ## Key Numbers
 
 - BabyAI benchmark steps parsed: 302
+- TextWorldExpress benchmark steps parsed: 319
 - TextWorldExpress improved smoke steps parsed: 3
 - TextWorldExpress `Unknown action`: 54 before canonicalization, 47 after canonicalization.
 

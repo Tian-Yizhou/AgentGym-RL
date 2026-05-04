@@ -10,12 +10,13 @@ OUT = ROOT / "pilot_outputs" / "final_artifacts"
 RUNS = {
     "babyai_smoke": ROOT / "slurm_logs" / "babyai_rl-7094697.out",
     "babyai_benchmark": ROOT / "slurm_logs" / "babyai_bench-7099097.out",
-    "textworldexpress": ROOT / "slurm_logs" / "twx_smoke-7107157.out",
+    "textworldexpress_smoke": ROOT / "slurm_logs" / "twx_smoke-7107157.out",
+    "textworldexpress_benchmark": ROOT / "slurm_logs" / "twx_bench-7111047.out",
 }
 
 CASE_DIRS = {
     "babyai_benchmark": ROOT / "saves" / "babyai_benchmark_7099097" / "executer_logs",
-    "textworldexpress": ROOT / "saves" / "textworldexpress_smoke_7107157" / "executer_logs",
+    "textworldexpress": ROOT / "saves" / "textworldexpress_benchmark_7111047" / "executer_logs",
 }
 
 METRICS = [
@@ -101,7 +102,7 @@ def plot_metrics(all_rows):
 
     smoke_runs = {
         "babyai_smoke": all_rows.get("babyai_smoke", []),
-        "textworldexpress_smoke": all_rows.get("textworldexpress", []),
+        "textworldexpress_smoke": all_rows.get("textworldexpress_smoke", []),
     }
     fig, axes = plt.subplots(1, 2, figsize=(12, 4.5))
     for ax, metric, ylabel in [
@@ -214,7 +215,8 @@ def write_completion_report(all_rows):
 - Requirement 2, training curves: completed.
   - `babyai_smoke_training_curves.png`
   - `babyai_benchmark_training_curves.png`
-  - `textworldexpress_training_curves.png`
+  - `textworldexpress_smoke_training_curves.png`
+  - `textworldexpress_benchmark_training_curves.png`
   - `smoke_comparison_training_curves.png`
   - CSV files under this directory.
 - Requirement 3, case studies: completed.
@@ -230,7 +232,8 @@ def write_completion_report(all_rows):
 ## Key Numbers
 
 - BabyAI benchmark steps parsed: {len(baby)}
-- TextWorldExpress improved smoke steps parsed: {len(twx)}
+- TextWorldExpress benchmark steps parsed: {len(all_rows.get("textworldexpress_benchmark", []))}
+- TextWorldExpress improved smoke steps parsed: {len(all_rows.get("textworldexpress_smoke", []))}
 - TextWorldExpress `Unknown action`: 54 before canonicalization, 47 after canonicalization.
 
 ## Important Files
@@ -248,6 +251,13 @@ def write_completion_report(all_rows):
 
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
+    for stale in [
+        "textworldexpress_metrics.csv",
+        "textworldexpress_training_curves.png",
+    ]:
+        path = OUT / stale
+        if path.exists():
+            path.unlink()
     all_rows = {name: parse_metrics(path) for name, path in RUNS.items()}
     for name, rows in all_rows.items():
         write_csv(name, rows)
