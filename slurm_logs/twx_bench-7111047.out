@@ -1,0 +1,86 @@
+Sun May  3 22:39:55 CDT 2026
+qgpu0405
+Sun May  3 22:39:55 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.86.15              Driver Version: 570.86.15      CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-PCIE-40GB          On  |   00000000:2F:00.0 Off |                    0 |
+| N/A   22C    P0             30W /  250W |       1MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+Python 3.10.0
+Name: textworld_express
+Version: 1.1.0
+Summary: TextWorldExpress: a highly optimized reimplementation of three text game benchmarks focusing on instruction following, commonsense reasoning, and object identification.
+Home-page: https://github.com/cognitiveailab/TextWorldExpress
+Author: Peter Jansen
+Author-email: 
+License: 
+Location: /gpfs/home/rvt4270/.conda/envs/agentgym-rl/lib/python3.10/site-packages
+Requires: orjson, prompt_toolkit, py4j
+Required-by: agentenv_textworldexpress
+---
+Name: py4j
+Version: 0.10.9.9
+Summary: Enables Python programs to dynamically access arbitrary Java objects
+Home-page: https://www.py4j.org/
+Author: Barthelemy Dagenais
+Author-email: barthelemy@infobart.com
+License: BSD License
+Location: /gpfs/home/rvt4270/.conda/envs/agentgym-rl/lib/python3.10/site-packages
+Requires: 
+Required-by: agentenv_textworldexpress, textworld_express
+---
+Name: agentenv
+Version: 0.2.0
+Summary: 
+Home-page: 
+Author: 
+Author-email: KYLN24 <hlguo24@m.fudan.edu.cn>
+License: MIT
+Location: /gpfs/home/rvt4270/.conda/envs/agentgym-rl/lib/python3.10/site-packages
+Editable project location: /gpfs/home/rvt4270/cs496/pilot_project/AgentGym-RL/AgentGym/agentenv
+Requires: accelerate, deepspeed, jsonlines, openai, scipy, tensorboard, torch, torch-tb-profiler, transformers, trl, wandb
+Required-by: 
+---
+Name: agentenv_textworldexpress
+Version: 0.0.1
+Summary: AgentEnv wrapper for TextWorldExpress
+Home-page: 
+Author: 
+Author-email: 
+License: MIT
+Location: /gpfs/home/rvt4270/.conda/envs/agentgym-rl/lib/python3.10/site-packages
+Editable project location: /gpfs/home/rvt4270/cs496/pilot_project/AgentGym-RL/AgentGym/agentenv-textworldexpress
+Requires: fastapi, py4j, textworld-express, uvicorn
+Required-by: 
+"This is environment TextWorldExpress."
+You are in the kitchen. In one part of the room you see a stove. There is also an oven. You also see a fridge that is closed. In another part of the room you see a counter, that has nothing on it. In one part of the room you see a kitchen cupboard that is closed. There is also a cutlery drawer that is closed. You also see a trash can that is closed. In another part of the room you see a dishwasher that is closed. In one part of the room you see a dining chair, that has nothing on it. There is also a cushion. You also see a teapot. In another part of the room you see a dirty strainer. 
+To the West you see the living room. 
+
+Valid actions:
+- inventory
+- look around
+- move west
+- open cutlery drawer
+- open dishwasher
+- open fridge
+- open kitchen cupboard
+- open trash can
+- take cushion
+- take dirty strainer
+- take teapot
+{'observation': 'Inventory: \n  Your inventory is currently empty.\n\n\nValid actions:\n- inventory\n- look around\n- move west\n- open cutlery drawer\n- open dishwasher\n- open fridge\n- open kitchen cupboard\n- open trash can\n- take cushion\n- take dirty strainer\n- take teapot', 'reward': 0.0, 'score': 0.0, 'done': False, 'valid_actions': ['inventory', 'look around', 'move west', 'open cutlery drawer', 'open dishwasher', 'open fridge', 'open kitchen cupboard', 'open trash can', 'take cushion', 'take dirty strainer', 'take teapot']}
+True

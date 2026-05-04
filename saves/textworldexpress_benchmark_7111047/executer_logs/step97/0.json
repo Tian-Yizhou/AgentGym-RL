@@ -1,0 +1,530 @@
+[
+    {
+        "item_id": 144,
+        "conversations": [
+            {
+                "role": "user",
+                "content": "You are playing a text adventure game. Every round I will give you an observation and a list of valid actions. Think briefly, then choose exactly one action copied verbatim from the valid actions list.\n\nYour output must strictly follow this format:\nThought:\n<your thoughts>\n\nAction:\n<one valid action>"
+            },
+            {
+                "role": "assistant",
+                "content": "OK. I will choose one valid action each round."
+            },
+            {
+                "role": "user",
+                "content": "You are in the corridor. In one part of the room you see a key holder, that has nothing on it. There is also a shoe cabinet that is closed. You also see a umbrella stand, that has nothing on it. In another part of the room you see a hat rack, that has nothing on it. In one part of the room you see a coat hanger, that has nothing on it. There is also a dirty salad spinner. \nTo the South you see a closed wood door. To the East you see the kitchen. \n\nValid actions:\n- close door to south\n- inventory\n- look around\n- move east\n- move south\n- open door to south\n- open shoe cabinet\n- take dirty salad spinner"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: The result of the Observation could be loaded into possible actions. \n\nAction: \nmove south"
+            },
+            {
+                "role": "user",
+                "content": "You can't move there, the door is closed. \n\nValid actions:\n- close door to south\n- inventory\n- look around\n- move east\n- move south\n- open door to south\n- open shoe cabinet\n- take dirty salad spinner"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: Getting more information about your surroundings, the door is closed.\n\nAction: \nclose door to south"
+            },
+            {
+                "role": "user",
+                "content": "That is already closed. \n\nValid actions:\n- close door to south\n- inventory\n- look around\n- move east\n- move south\n- open door to south\n- open shoe cabinet\n- take dirty salad spinner"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: Exploring the room again can lead to more opportunities.\n\nAction: \ninventory"
+            },
+            {
+                "role": "user",
+                "content": "Inventory: \n  Your inventory is currently empty.\n\n\nValid actions:\n- close door to south\n- inventory\n- look around\n- move east\n- move south\n- open door to south\n- open shoe cabinet\n- take dirty salad spinner"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: Confirming and trying to clear out a bit before deciding.\n\nAction: \nlook around"
+            },
+            {
+                "role": "user",
+                "content": "You are in the corridor. In one part of the room you see a key holder, that has nothing on it. There is also a shoe cabinet that is closed. You also see a umbrella stand, that has nothing on it. In another part of the room you see a hat rack, that has nothing on it. In one part of the room you see a coat hanger, that has nothing on it. There is also a dirty salad spinner. \nTo the South you see a closed wood door. To the East you see the kitchen. \n\nValid actions:\n- close door to south\n- inventory\n- look around\n- move east\n- move south\n- open door to south\n- open shoe cabinet\n- take dirty salad spinner"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: Instead of looking around/stockpiling some inventory, starting a search mode.\n\nAction: \nsearch wood door south"
+            },
+            {
+                "role": "user",
+                "content": "Inventory: \n  Your inventory is currently empty.\n\n\nValid actions:\n- close door to south\n- inventory\n- look around\n- move east\n- move south\n- open door to south\n- open shoe cabinet\n- take dirty salad spinner"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: Retrying to open the door, and instead hearing hearing footsteps, realized it wasn't locked. Person walking inside.\n\nAction: \nopen door to south"
+            },
+            {
+                "role": "user",
+                "content": "You open the wood door, revealing the laundry room. \n\nValid actions:\n- close door to south\n- inventory\n- look around\n- move east\n- move south\n- open door to south\n- open shoe cabinet\n- take dirty salad spinner"
+            }
+        ],
+        "reward": 0.0
+    },
+    {
+        "item_id": 144,
+        "conversations": [
+            {
+                "role": "user",
+                "content": "You are playing a text adventure game. Every round I will give you an observation and a list of valid actions. Think briefly, then choose exactly one action copied verbatim from the valid actions list.\n\nYour output must strictly follow this format:\nThought:\n<your thoughts>\n\nAction:\n<one valid action>"
+            },
+            {
+                "role": "assistant",
+                "content": "OK. I will choose one valid action each round."
+            },
+            {
+                "role": "user",
+                "content": "You are in the corridor. In one part of the room you see a key holder, that has nothing on it. There is also a shoe cabinet that is closed. You also see a umbrella stand, that has nothing on it. In another part of the room you see a hat rack, that has nothing on it. In one part of the room you see a coat hanger, that has nothing on it. There is also a dirty salad spinner. \nTo the South you see a closed wood door. To the East you see the kitchen. \n\nValid actions:\n- close door to south\n- inventory\n- look around\n- move east\n- move south\n- open door to south\n- open shoe cabinet\n- take dirty salad spinner"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: The scene is essentially considered fixed and there will be few actions possible.\nAction: open shoe cabinet"
+            },
+            {
+                "role": "user",
+                "content": "You open the shoe cabinet. It's empty inside.\n\nValid actions:\n- close door to south\n- close shoe cabinet\n- inventory\n- look around\n- move east\n- move south\n- open door to south\n- take dirty salad spinner"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: Taking one umbrella is ontologically possible.\nAction: take dirty salad spinner"
+            },
+            {
+                "role": "user",
+                "content": "You take the dirty salad spinner.\n\nValid actions:\n- close door to south\n- close shoe cabinet\n- inventory\n- look around\n- move east\n- move south\n- open door to south\n- put dirty salad spinner in coat hanger\n- put dirty salad spinner in hat rack\n- put dirty salad spinner in key holder\n- put dirty salad spinner in shoe cabinet\n- put dirty salad spinner in umbrella stand"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: Below the action, there are few options.\nAction: inventory"
+            },
+            {
+                "role": "user",
+                "content": "Inventory: \n  a dirty salad spinner\n\n\nValid actions:\n- close door to south\n- close shoe cabinet\n- inventory\n- look around\n- move east\n- move south\n- open door to south\n- put dirty salad spinner in coat hanger\n- put dirty salad spinner in hat rack\n- put dirty salad spinner in key holder\n- put dirty salad spinner in shoe cabinet\n- put dirty salad spinner in umbrella stand"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: The action is unfinished but there is a bit of logic multiplying.\nAction: put dirty salad spinner in hat rack"
+            },
+            {
+                "role": "user",
+                "content": "You put the dirty salad spinner in the hat rack.\n\nValid actions:\n- close door to south\n- close shoe cabinet\n- inventory\n- look around\n- move east\n- move south\n- open door to south\n- take dirty salad spinner"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: There is logic behind this weird surgical deference.\nAction: take dirty salad spinner"
+            },
+            {
+                "role": "user",
+                "content": "You take the dirty salad spinner.\n\nValid actions:\n- close door to south\n- close shoe cabinet\n- inventory\n- look around\n- move east\n- move south\n- open door to south\n- put dirty salad spinner in coat hanger\n- put dirty salad spinner in hat rack\n- put dirty salad spinner in key holder\n- put dirty salad spinner in shoe cabinet\n- put dirty salad spinner in umbrella stand"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: Plan B takes much less effort.\nAction: put dirty salad spinner in hat rack"
+            },
+            {
+                "role": "user",
+                "content": "You put the dirty salad spinner in the hat rack.\n\nValid actions:\n- close door to south\n- close shoe cabinet\n- inventory\n- look around\n- move east\n- move south\n- open door to south\n- take dirty salad spinner"
+            }
+        ],
+        "reward": -0.125
+    },
+    {
+        "item_id": 124,
+        "conversations": [
+            {
+                "role": "user",
+                "content": "You are playing a text adventure game. Every round I will give you an observation and a list of valid actions. Think briefly, then choose exactly one action copied verbatim from the valid actions list.\n\nYour output must strictly follow this format:\nThought:\n<your thoughts>\n\nAction:\n<one valid action>"
+            },
+            {
+                "role": "assistant",
+                "content": "OK. I will choose one valid action each round."
+            },
+            {
+                "role": "user",
+                "content": "You are in the living room. In one part of the room you see a wastepaper basket that is closed. There is also a book case, that has nothing on it. You also see a TV stand, that has nothing on it. In another part of the room you see a arm chair, that has nothing on it. In one part of the room you see a side table, that has nothing on it. There is also a coffee table, that has nothing on it. You also see a end table, that has nothing on it. In another part of the room you see a sofa, that has nothing on it. \nTo the West you see a closed wood door. \n\nValid actions:\n- close door to west\n- inventory\n- look around\n- move west\n- open door to west\n- open wastepaper basket"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: The design of the room and its objects and location suggest that it is likely a workplace or storage area rather than a living space.\n\nAction: close door to west"
+            },
+            {
+                "role": "user",
+                "content": "That is already closed. \n\nValid actions:\n- close door to west\n- inventory\n- look around\n- move west\n- open door to west\n- open wastepaper basket"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: The action 'close door to west' is already taken and can be ignored.\n\nAction: wander"
+            },
+            {
+                "role": "user",
+                "content": "That is already closed. \n\nValid actions:\n- close door to west\n- inventory\n- look around\n- move west\n- open door to west\n- open wastepaper basket"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: The object 'wooden door' can be placed away from the living room now, making the question more relevant.\n\nAction: move west"
+            },
+            {
+                "role": "user",
+                "content": "You can't move there, the door is closed. \n\nValid actions:\n- close door to west\n- inventory\n- look around\n- move west\n- open door to west\n- open wastepaper basket"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: This can be ignored based on the initial observation.\n\nAction: investigate"
+            },
+            {
+                "role": "user",
+                "content": "Unknown action: I'm not sure what you mean.\n\nValid actions:\n- close door to west\n- inventory\n- look around\n- move west\n- open door to west\n- open wastepaper basket"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: The question is unclear, and no specific action is needed; just let the question rest.\n\nAction: continue observing"
+            },
+            {
+                "role": "user",
+                "content": "Unknown action: I'm not sure what you mean.\n\nValid actions:\n- close door to west\n- inventory\n- look around\n- move west\n- open door to west\n- open wastepaper basket"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: Moving further in the living room seems like a good idea.\n\nAction: move west"
+            },
+            {
+                "role": "user",
+                "content": "You can't move there, the door is closed. \n\nValid actions:\n- close door to west\n- inventory\n- look around\n- move west\n- open door to west\n- open wastepaper basket"
+            }
+        ],
+        "reward": 0.0
+    },
+    {
+        "item_id": 124,
+        "conversations": [
+            {
+                "role": "user",
+                "content": "You are playing a text adventure game. Every round I will give you an observation and a list of valid actions. Think briefly, then choose exactly one action copied verbatim from the valid actions list.\n\nYour output must strictly follow this format:\nThought:\n<your thoughts>\n\nAction:\n<one valid action>"
+            },
+            {
+                "role": "assistant",
+                "content": "OK. I will choose one valid action each round."
+            },
+            {
+                "role": "user",
+                "content": "You are in the living room. In one part of the room you see a wastepaper basket that is closed. There is also a book case, that has nothing on it. You also see a TV stand, that has nothing on it. In another part of the room you see a arm chair, that has nothing on it. In one part of the room you see a side table, that has nothing on it. There is also a coffee table, that has nothing on it. You also see a end table, that has nothing on it. In another part of the room you see a sofa, that has nothing on it. \nTo the West you see a closed wood door. \n\nValid actions:\n- close door to west\n- inventory\n- look around\n- move west\n- open door to west\n- open wastepaper basket"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: The room is empty, there are no items of interest for the player to pick up.\nAction: inventory"
+            },
+            {
+                "role": "user",
+                "content": "Inventory: \n  Your inventory is currently empty.\n\n\nValid actions:\n- close door to west\n- inventory\n- look around\n- move west\n- open door to west\n- open wastepaper basket"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: There are no required actions listed here. It might be empty or the player doesn't know from observation.\nAction: look around"
+            },
+            {
+                "role": "user",
+                "content": "You are in the living room. In one part of the room you see a wastepaper basket that is closed. There is also a book case, that has nothing on it. You also see a TV stand, that has nothing on it. In another part of the room you see a arm chair, that has nothing on it. In one part of the room you see a side table, that has nothing on it. There is also a coffee table, that has nothing on it. You also see a end table, that has nothing on it. In another part of the room you see a sofa, that has nothing on it. \nTo the West you see a closed wood door. \n\nValid actions:\n- close door to west\n- inventory\n- look around\n- move west\n- open door to west\n- open wastepaper basket"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: The room is empty, there are no items of interest for the player to look at.\nAction: move west"
+            },
+            {
+                "role": "user",
+                "content": "You can't move there, the door is closed. \n\nValid actions:\n- close door to west\n- inventory\n- look around\n- move west\n- open door to west\n- open wastepaper basket"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: There is no reason to continue looking about or continuing.\nAction: close door to west"
+            },
+            {
+                "role": "user",
+                "content": "That is already closed. \n\nValid actions:\n- close door to west\n- inventory\n- look around\n- move west\n- open door to west\n- open wastepaper basket"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: The player has decided to stop looking.\nAction: ok"
+            },
+            {
+                "role": "user",
+                "content": "Unknown action: I'm not sure what you mean.\n\nValid actions:\n- close door to west\n- inventory\n- look around\n- move west\n- open door to west\n- open wastepaper basket"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: This action does not fit the context of the situation, so it might be helpful to repeat some parts of the observation and generate a question or request to start the game.\nAction: inventory"
+            },
+            {
+                "role": "user",
+                "content": "Inventory: \n  Your inventory is currently empty.\n\n\nValid actions:\n- close door to west\n- inventory\n- look around\n- move west\n- open door to west\n- open wastepaper basket"
+            }
+        ],
+        "reward": 0.0
+    },
+    {
+        "item_id": 17,
+        "conversations": [
+            {
+                "role": "user",
+                "content": "You are playing a text adventure game. Every round I will give you an observation and a list of valid actions. Think briefly, then choose exactly one action copied verbatim from the valid actions list.\n\nYour output must strictly follow this format:\nThought:\n<your thoughts>\n\nAction:\n<one valid action>"
+            },
+            {
+                "role": "assistant",
+                "content": "OK. I will choose one valid action each round."
+            },
+            {
+                "role": "user",
+                "content": "You are in the kitchen. In one part of the room you see a stove. There is also an oven. You also see a fridge that is closed. In another part of the room you see a counter, that has nothing on it. In one part of the room you see a kitchen cupboard that is closed. There is also a cutlery drawer that is closed. You also see a trash can that is closed. In another part of the room you see a dishwasher that is closed. In one part of the room you see a dining chair, that has nothing on it. There is also a table lamp. \nTo the North you see a closed plain door. To the East you see the living room. \n\nValid actions:\n- close door to north\n- inventory\n- look around\n- move east\n- move north\n- open cutlery drawer\n- open dishwasher\n- open door to north\n- open fridge\n- open kitchen cupboard\n- open trash can\n- take table lamp"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: The room description is mostly empty with no moving objects to look for.\n\nAction: open fridge"
+            },
+            {
+                "role": "user",
+                "content": "You open the fridge. It's empty inside.\n\nValid actions:\n- close door to north\n- close fridge\n- inventory\n- look around\n- move east\n- move north\n- open cutlery drawer\n- open dishwasher\n- open door to north\n- open kitchen cupboard\n- open trash can\n- take table lamp"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: The fridge was empty, so there's nothing further to search.\n\nAction: take table lamp"
+            },
+            {
+                "role": "user",
+                "content": "You take the table lamp.\n\nValid actions:\n- close door to north\n- close fridge\n- inventory\n- look around\n- move east\n- move north\n- open cutlery drawer\n- open dishwasher\n- open door to north\n- open kitchen cupboard\n- open trash can\n- put table lamp in counter\n- put table lamp in dining chair\n- put table lamp in fridge"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: Not using the table lamp initially, you then realize the option isn't applicable as you had already checked it.\n\nAction: put table lamp in fridge"
+            },
+            {
+                "role": "user",
+                "content": "You put the table lamp in the fridge.\n\nValid actions:\n- close door to north\n- close fridge\n- inventory\n- look around\n- move east\n- move north\n- open cutlery drawer\n- open dishwasher\n- open door to north\n- open kitchen cupboard\n- open trash can\n- take table lamp"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: There were no fitting instructions for using the table lamp, so you replaced it with a table candle (assuming there's no kitchen candle rather than a persistent table candle).\n\nValid actions:\n- close door to north\n- close fridge\n- inventory\n- look around\n- move east\n- move north\n- open cutlery drawer\n- open dishwasher\n- open door to north\n- open kitchen cupboard\n- open trash can\n- take table lamp"
+            },
+            {
+                "role": "user",
+                "content": "Unknown action: I'm not sure what you mean.\n\nValid actions:\n- close door to north\n- close fridge\n- inventory\n- look around\n- move east\n- move north\n- open cutlery drawer\n- open dishwasher\n- open door to north\n- open kitchen cupboard\n- open trash can\n- take table lamp"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: After opening the fridge lid, you haven't changed anything else, so you can remain there without immediately returning.\n\nAction: wait and observe"
+            },
+            {
+                "role": "user",
+                "content": "Unknown action: I'm not sure what you mean.\n\nValid actions:\n- close door to north\n- close fridge\n- inventory\n- look around\n- move east\n- move north\n- open cutlery drawer\n- open dishwasher\n- open door to north\n- open kitchen cupboard\n- open trash can\n- take table lamp"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: Since both options for an explanation to the previous \"Observation\" have been observed, it may be helpful to consider some things about the kitchen layout hidden in the room descriptions.\n\nAction: explore room to understand more\npossibilities:\n- There's a TV in the living area\n- It's possible the stove or fridge is hidden from view\n- Perhaps you're looking at a spindle fridge\n- This kitchen is using the laundry\n\nValid actions:\n- inventory\n- close fridge\n- go outside\n- look around\n- take table lamp from fridge\n\nThough one possibility at a time, idea: going outside or not actively"
+            },
+            {
+                "role": "user",
+                "content": "Unknown action: I'm not sure what you mean.\n\nValid actions:\n- close door to north\n- close fridge\n- inventory\n- look around\n- move east\n- move north\n- open cutlery drawer\n- open dishwasher\n- open door to north\n- open kitchen cupboard\n- open trash can\n- take table lamp"
+            }
+        ],
+        "reward": 0.0
+    },
+    {
+        "item_id": 17,
+        "conversations": [
+            {
+                "role": "user",
+                "content": "You are playing a text adventure game. Every round I will give you an observation and a list of valid actions. Think briefly, then choose exactly one action copied verbatim from the valid actions list.\n\nYour output must strictly follow this format:\nThought:\n<your thoughts>\n\nAction:\n<one valid action>"
+            },
+            {
+                "role": "assistant",
+                "content": "OK. I will choose one valid action each round."
+            },
+            {
+                "role": "user",
+                "content": "You are in the kitchen. In one part of the room you see a stove. There is also an oven. You also see a fridge that is closed. In another part of the room you see a counter, that has nothing on it. In one part of the room you see a kitchen cupboard that is closed. There is also a cutlery drawer that is closed. You also see a trash can that is closed. In another part of the room you see a dishwasher that is closed. In one part of the room you see a dining chair, that has nothing on it. There is also a table lamp. \nTo the North you see a closed plain door. To the East you see the living room. \n\nValid actions:\n- close door to north\n- inventory\n- look around\n- move east\n- move north\n- open cutlery drawer\n- open dishwasher\n- open door to north\n- open fridge\n- open kitchen cupboard\n- open trash can\n- take table lamp"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: The door to the north is closed, so it's reasonable to assume that the fridge and counter area is the best starting point for investigation.\nAction: close door to north"
+            },
+            {
+                "role": "user",
+                "content": "That is already closed. \n\nValid actions:\n- close door to north\n- inventory\n- look around\n- move east\n- move north\n- open cutlery drawer\n- open dishwasher\n- open door to north\n- open fridge\n- open kitchen cupboard\n- open trash can\n- take table lamp"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: The fridge and counter area is already described as \"closed\", so it's not feasible for me to follow the instructions appropriately. I may be mistaken, but it sounds like you made an oversight. Perhaps you're just referring to different parts of the room that are not pages on this interface.\nAction: take table lamp"
+            },
+            {
+                "role": "user",
+                "content": "You take the table lamp.\n\nValid actions:\n- close door to north\n- inventory\n- look around\n- move east\n- move north\n- open cutlery drawer\n- open dishwasher\n- open door to north\n- open fridge\n- open kitchen cupboard\n- open trash can\n- put table lamp in counter\n- put table lamp in dining chair"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: The counter area is also closed, so it's not feasible to follow the instructions again.\nAction: take table lamp"
+            },
+            {
+                "role": "user",
+                "content": "Unknown action: I'm not sure what you mean.\n\nValid actions:\n- close door to north\n- inventory\n- look around\n- move east\n- move north\n- open cutlery drawer\n- open dishwasher\n- open door to north\n- open fridge\n- open kitchen cupboard\n- open trash can\n- put table lamp in counter\n- put table lamp in dining chair"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: There's information in the prompt stating that you can open the fridge and then I need to choose an option.\nAction: open fridge"
+            },
+            {
+                "role": "user",
+                "content": "You open the fridge. It's empty inside.\n\nValid actions:\n- close door to north\n- close fridge\n- inventory\n- look around\n- move east\n- move north\n- open cutlery drawer\n- open dishwasher\n- open door to north\n- open kitchen cupboard\n- open trash can\n- put table lamp in counter\n- put table lamp in dining chair\n- put table lamp in fridge"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: I was mistaken by the prompt, but a few actions were correct that were specifically unfollowed.\nAction: open fridge"
+            },
+            {
+                "role": "user",
+                "content": "Unknown action: I'm not sure what you mean.\n\nValid actions:\n- close door to north\n- close fridge\n- inventory\n- look around\n- move east\n- move north\n- open cutlery drawer\n- open dishwasher\n- open door to north\n- open kitchen cupboard\n- open trash can\n- put table lamp in counter\n- put table lamp in dining chair\n- put table lamp in fridge"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: I was unable to follow the latter part of the unlocking through the fridge and restocking instructions. However, it was straightforward to follow the first two instructions.\nAction: take table lamp"
+            },
+            {
+                "role": "user",
+                "content": "Unknown action: I'm not sure what you mean.\n\nValid actions:\n- close door to north\n- close fridge\n- inventory\n- look around\n- move east\n- move north\n- open cutlery drawer\n- open dishwasher\n- open door to north\n- open kitchen cupboard\n- open trash can\n- put table lamp in counter\n- put table lamp in dining chair\n- put table lamp in fridge"
+            }
+        ],
+        "reward": 0.0
+    },
+    {
+        "item_id": 10,
+        "conversations": [
+            {
+                "role": "user",
+                "content": "You are playing a text adventure game. Every round I will give you an observation and a list of valid actions. Think briefly, then choose exactly one action copied verbatim from the valid actions list.\n\nYour output must strictly follow this format:\nThought:\n<your thoughts>\n\nAction:\n<one valid action>"
+            },
+            {
+                "role": "assistant",
+                "content": "OK. I will choose one valid action each round."
+            },
+            {
+                "role": "user",
+                "content": "You are in the living room. In one part of the room you see a wastepaper basket that is closed. There is also a book case, that has nothing on it. You also see a TV stand, that has nothing on it. In another part of the room you see a arm chair, that has nothing on it. In one part of the room you see a side table, that has nothing on it. There is also a coffee table, that has nothing on it. You also see a end table, that has nothing on it. In another part of the room you see a sofa, that has nothing on it. In one part of the room you see a chicken leg. \nTo the South you see a closed wood door. \n\nValid actions:\n- close door to south\n- inventory\n- look around\n- move south\n- open door to south\n- open wastepaper basket\n- take chicken leg"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: The environment is too chaotic for an inventory or take action, this is a natural observation of the room.\nAction: open wastepaper basket"
+            },
+            {
+                "role": "user",
+                "content": "You open the wastepaper basket. It's empty inside.\n\nValid actions:\n- close door to south\n- close wastepaper basket\n- inventory\n- look around\n- move south\n- open door to south\n- take chicken leg"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: The wastepaper basket could contain important documents or items, observing the contents of the waste basket is an observation.\nAction: inventory"
+            },
+            {
+                "role": "user",
+                "content": "Inventory: \n  Your inventory is currently empty.\n\n\nValid actions:\n- close door to south\n- close wastepaper basket\n- inventory\n- look around\n- move south\n- open door to south\n- take chicken leg"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: Every floor steps back do not causing possible fall hazards.\nAction: take chicken leg"
+            },
+            {
+                "role": "user",
+                "content": "You take the chicken leg.\n\nValid actions:\n- close door to south\n- close wastepaper basket\n- inventory\n- look around\n- move south\n- open door to south\n- put chicken leg in TV stand\n- put chicken leg in arm chair\n- put chicken leg in book case\n- put chicken leg in coffee table\n- put chicken leg in end table\n- put chicken leg in side table\n- put chicken leg in sofa\n- put chicken leg in wastepaper basket"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: Moving does not change the physical surroundings.\nAction: put chicken leg in TV stand\nAction: put chicken leg in arm chair\nAction: put chicken leg in book case\nAction: put chicken leg in coffee table\nAction: put chicken leg in end table\nAction: put chicken leg in side table\nAction: put chicken leg in sofa\nAction: take chicken leg"
+            },
+            {
+                "role": "user",
+                "content": "Error: Only one 'Action' is allowed per response."
+            },
+            {
+                "role": "assistant",
+                "content": "Your response was in the wrong format. It was improperly stating your thoughts towards taking the chicken leg and acting in a wrong fashion while acting on your own."
+            },
+            {
+                "role": "user",
+                "content": "Unknown action: I'm not sure what you mean.\n\nValid actions:\n- close door to south\n- close wastepaper basket\n- inventory\n- look around\n- move south\n- open door to south\n- put chicken leg in TV stand\n- put chicken leg in arm chair\n- put chicken leg in book case\n- put chicken leg in coffee table\n- put chicken leg in end table\n- put chicken leg in side table\n- put chicken leg in sofa\n- put chicken leg in wastepaper basket"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: The paragraph review in response did not help in me leading into the correct actions.\nAction: close door to south"
+            },
+            {
+                "role": "user",
+                "content": "That is already closed. \n\nValid actions:\n- close door to south\n- close wastepaper basket\n- inventory\n- look around\n- move south\n- open door to south\n- put chicken leg in TV stand\n- put chicken leg in arm chair\n- put chicken leg in book case\n- put chicken leg in coffee table\n- put chicken leg in end table\n- put chicken leg in side table\n- put chicken leg in sofa\n- put chicken leg in wastepaper basket"
+            }
+        ],
+        "reward": 0.0
+    },
+    {
+        "item_id": 10,
+        "conversations": [
+            {
+                "role": "user",
+                "content": "You are playing a text adventure game. Every round I will give you an observation and a list of valid actions. Think briefly, then choose exactly one action copied verbatim from the valid actions list.\n\nYour output must strictly follow this format:\nThought:\n<your thoughts>\n\nAction:\n<one valid action>"
+            },
+            {
+                "role": "assistant",
+                "content": "OK. I will choose one valid action each round."
+            },
+            {
+                "role": "user",
+                "content": "You are in the living room. In one part of the room you see a wastepaper basket that is closed. There is also a book case, that has nothing on it. You also see a TV stand, that has nothing on it. In another part of the room you see a arm chair, that has nothing on it. In one part of the room you see a side table, that has nothing on it. There is also a coffee table, that has nothing on it. You also see a end table, that has nothing on it. In another part of the room you see a sofa, that has nothing on it. In one part of the room you see a chicken leg. \nTo the South you see a closed wood door. \n\nValid actions:\n- close door to south\n- inventory\n- look around\n- move south\n- open door to south\n- open wastepaper basket\n- take chicken leg"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: The wastepaper basket is closed, so closing it to south would not provide a solution.\nAction: close door to south"
+            },
+            {
+                "role": "user",
+                "content": "That is already closed. \n\nValid actions:\n- close door to south\n- inventory\n- look around\n- move south\n- open door to south\n- open wastepaper basket\n- take chicken leg"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: I entered an inappropriate subject for this text adventure as suggested by the game authors.\nAction: (empty slide)"
+            },
+            {
+                "role": "user",
+                "content": "Unknown action: I'm not sure what you mean.\n\nValid actions:\n- close door to south\n- inventory\n- look around\n- move south\n- open door to south\n- open wastepaper basket\n- take chicken leg"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: Checking usage again, I see that my assistant has only used open door to south without clarifying it or providing a full question.\nAction: open door to south"
+            },
+            {
+                "role": "user",
+                "content": "You open the wood door, revealing the bathroom. \n\nValid actions:\n- close door to south\n- inventory\n- look around\n- move south\n- open door to south\n- open wastepaper basket\n- take chicken leg"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: Correct usage was provided during discussion this time.\nAction: open door to south"
+            },
+            {
+                "role": "user",
+                "content": "That is already open. \n\nValid actions:\n- close door to south\n- inventory\n- look around\n- move south\n- open door to south\n- open wastepaper basket\n- take chicken leg"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: I left my previous question unanswered in favor of asking what I would need to do next.\nAction: inventory"
+            },
+            {
+                "role": "user",
+                "content": "Inventory: \n  Your inventory is currently empty.\n\n\nValid actions:\n- close door to south\n- inventory\n- look around\n- move south\n- open door to south\n- open wastepaper basket\n- take chicken leg"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: Multiple valid actions were used, so I had to consider multiple choices as he hasn't given a new action.\nAction:\nopen wastepaper basket"
+            },
+            {
+                "role": "user",
+                "content": "You open the wastepaper basket. It's empty inside.\n\nValid actions:\n- close door to south\n- close wastepaper basket\n- inventory\n- look around\n- move south\n- open door to south\n- take chicken leg"
+            }
+        ],
+        "reward": 0.0
+    }
+]
