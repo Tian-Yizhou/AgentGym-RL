@@ -1,0 +1,307 @@
+Sun May  3 16:39:27 CDT 2026
+qgpu0203
+Sun May  3 16:39:27 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.86.15              Driver Version: 570.86.15      CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-PCIE-40GB          On  |   00000000:2F:00.0 Off |                    0 |
+| N/A   22C    P0             29W /  250W |       1MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+Python 3.10.0
+Name: torch
+Version: 2.4.0
+Summary: Tensors and Dynamic neural networks in Python with strong GPU acceleration
+Home-page: https://pytorch.org/
+Author: PyTorch Team
+Author-email: packages@pytorch.org
+License: BSD-3
+Location: /gpfs/home/rvt4270/.conda/envs/agentgym-rl/lib/python3.10/site-packages
+Requires: filelock, fsspec, jinja2, networkx, nvidia-cublas-cu12, nvidia-cuda-cupti-cu12, nvidia-cuda-nvrtc-cu12, nvidia-cuda-runtime-cu12, nvidia-cudnn-cu12, nvidia-cufft-cu12, nvidia-curand-cu12, nvidia-cusolver-cu12, nvidia-cusparse-cu12, nvidia-nccl-cu12, nvidia-nvtx-cu12, sympy, triton, typing-extensions
+Required-by: accelerate, agentenv, deepspeed, flash_attn, peft, tensordict, torchvision, verl, vllm, xformers
+---
+Name: vllm
+Version: 0.6.3
+Summary: A high-throughput and memory-efficient inference and serving engine for LLMs
+Home-page: https://github.com/vllm-project/vllm
+Author: vLLM Team
+Author-email: 
+License: Apache 2.0
+Location: /gpfs/home/rvt4270/.conda/envs/agentgym-rl/lib/python3.10/site-packages
+Requires: aiohttp, einops, fastapi, filelock, gguf, importlib-metadata, lm-format-enforcer, mistral-common, msgspec, numpy, nvidia-ml-py, openai, outlines, partial-json-parser, pillow, prometheus-client, prometheus-fastapi-instrumentator, protobuf, psutil, py-cpuinfo, pydantic, pyyaml, pyzmq, ray, requests, sentencepiece, tiktoken, tokenizers, torch, torchvision, tqdm, transformers, typing-extensions, uvicorn, xformers
+Required-by: verl
+---
+Name: transformers
+Version: 4.57.6
+Summary: State-of-the-art Machine Learning for JAX, PyTorch and TensorFlow
+Home-page: https://github.com/huggingface/transformers
+Author: The Hugging Face team (past and future) with the help of all our contributors (https://github.com/huggingface/transformers/graphs/contributors)
+Author-email: transformers@huggingface.co
+License: Apache 2.0 License
+Location: /gpfs/home/rvt4270/.conda/envs/agentgym-rl/lib/python3.10/site-packages
+Requires: filelock, huggingface-hub, numpy, packaging, pyyaml, regex, requests, safetensors, tokenizers, tqdm
+Required-by: agentenv, peft, trl, verl, vllm
+---
+Name: tokenizers
+Version: 0.22.2
+Summary: 
+Home-page: https://github.com/huggingface/tokenizers
+Author: 
+Author-email: Nicolas Patry <patry.nicolas@protonmail.com>, Anthony Moi <anthony@huggingface.co>
+License: 
+Location: /gpfs/home/rvt4270/.conda/envs/agentgym-rl/lib/python3.10/site-packages
+Requires: huggingface-hub
+Required-by: transformers, vllm
+---
+Name: agentenv
+Version: 0.2.0
+Summary: 
+Home-page: 
+Author: 
+Author-email: KYLN24 <hlguo24@m.fudan.edu.cn>
+License: MIT
+Location: /gpfs/home/rvt4270/.conda/envs/agentgym-rl/lib/python3.10/site-packages
+Editable project location: /gpfs/home/rvt4270/cs496/pilot_project/AgentGym-RL/AgentGym/agentenv
+Requires: accelerate, deepspeed, jsonlines, openai, scipy, tensorboard, torch, torch-tb-profiler, transformers, trl, wandb
+Required-by: 
+---
+Name: agentenv_babyai
+Version: 0.0.1
+Summary: 
+Home-page: 
+Author: 
+Author-email: Andy15 <1413924962@qq.com>
+License: MIT
+Location: /gpfs/home/rvt4270/.conda/envs/agentgym-rl/lib/python3.10/site-packages
+Editable project location: /gpfs/home/rvt4270/cs496/pilot_project/AgentGym-RL/AgentGym/agentenv-babyai
+Requires: fastapi, gym, gymnasium, matplotlib, minigrid, uvicorn
+Required-by: 
+"This is environment BabyAI."
+[36m(main_task pid=1165337)[0m {'actor_rollout_ref': {'actor': {'clip_ratio': 0.2,
+[36m(main_task pid=1165337)[0m                                  'entropy_coeff': 0.001,
+[36m(main_task pid=1165337)[0m                                  'fsdp_config': {'fsdp_size': -1,
+[36m(main_task pid=1165337)[0m                                                  'grad_offload': False,
+[36m(main_task pid=1165337)[0m                                                  'optimizer_offload': False,
+[36m(main_task pid=1165337)[0m                                                  'param_offload': False,
+[36m(main_task pid=1165337)[0m                                                  'wrap_policy': {'min_num_params': 0}},
+[36m(main_task pid=1165337)[0m                                  'grad_clip': 1.0,
+[36m(main_task pid=1165337)[0m                                  'kl_loss_coef': 0.001,
+[36m(main_task pid=1165337)[0m                                  'kl_loss_type': 'low_var_kl',
+[36m(main_task pid=1165337)[0m                                  'optim': {'lr': 1e-06,
+[36m(main_task pid=1165337)[0m                                            'lr_warmup_steps_ratio': 0.0,
+[36m(main_task pid=1165337)[0m                                            'min_lr_ratio': None,
+[36m(main_task pid=1165337)[0m                                            'total_training_steps': -1,
+[36m(main_task pid=1165337)[0m                                            'warmup_style': 'constant'},
+[36m(main_task pid=1165337)[0m                                  'ppo_epochs': 1,
+[36m(main_task pid=1165337)[0m                                  'ppo_max_token_len_per_gpu': 16384,
+[36m(main_task pid=1165337)[0m                                  'ppo_micro_batch_size': None,
+[36m(main_task pid=1165337)[0m                                  'ppo_micro_batch_size_per_gpu': 1,
+[36m(main_task pid=1165337)[0m                                  'ppo_mini_batch_size': 4,
+[36m(main_task pid=1165337)[0m                                  'shuffle': False,
+[36m(main_task pid=1165337)[0m                                  'strategy': 'fsdp',
+[36m(main_task pid=1165337)[0m                                  'ulysses_sequence_parallel_size': 1,
+[36m(main_task pid=1165337)[0m                                  'use_dynamic_bsz': False,
+[36m(main_task pid=1165337)[0m                                  'use_kl_loss': True},
+[36m(main_task pid=1165337)[0m                        'agentgym': {'env_addr': 'http://127.0.0.1:36001',
+[36m(main_task pid=1165337)[0m                                     'max_retries': 10,
+[36m(main_task pid=1165337)[0m                                     'max_rounds': 10,
+[36m(main_task pid=1165337)[0m                                     'task_name': 'babyai',
+[36m(main_task pid=1165337)[0m                                     'timeout': 300},
+[36m(main_task pid=1165337)[0m                        'hybrid_engine': True,
+[36m(main_task pid=1165337)[0m                        'model': {'enable_gradient_checkpointing': True,
+[36m(main_task pid=1165337)[0m                                  'external_lib': None,
+[36m(main_task pid=1165337)[0m                                  'override_config': {},
+[36m(main_task pid=1165337)[0m                                  'path': '../models/Qwen2.5-0.5B-Instruct',
+[36m(main_task pid=1165337)[0m                                  'use_remove_padding': False},
+[36m(main_task pid=1165337)[0m                        'ref': {'fsdp_config': {'param_offload': False,
+[36m(main_task pid=1165337)[0m                                                'wrap_policy': {'min_num_params': 0}},
+[36m(main_task pid=1165337)[0m                                'log_prob_max_token_len_per_gpu': 16384,
+[36m(main_task pid=1165337)[0m                                'log_prob_micro_batch_size': None,
+[36m(main_task pid=1165337)[0m                                'log_prob_micro_batch_size_per_gpu': 1,
+[36m(main_task pid=1165337)[0m                                'log_prob_use_dynamic_bsz': False,
+[36m(main_task pid=1165337)[0m                                'ulysses_sequence_parallel_size': 1},
+[36m(main_task pid=1165337)[0m                        'rollout': {'disable_log_stats': True,
+[36m(main_task pid=1165337)[0m                                    'do_sample': True,
+[36m(main_task pid=1165337)[0m                                    'dtype': 'bfloat16',
+[36m(main_task pid=1165337)[0m                                    'enable_chunked_prefill': True,
+[36m(main_task pid=1165337)[0m                                    'enforce_eager': True,
+[36m(main_task pid=1165337)[0m                                    'free_cache_engine': True,
+[36m(main_task pid=1165337)[0m                                    'gpu_memory_utilization': 0.5,
+[36m(main_task pid=1165337)[0m                                    'ignore_eos': False,
+[36m(main_task pid=1165337)[0m                                    'load_format': 'dummy_dtensor',
+[36m(main_task pid=1165337)[0m                                    'log_prob_max_token_len_per_gpu': 16384,
+[36m(main_task pid=1165337)[0m                                    'log_prob_micro_batch_size': None,
+[36m(main_task pid=1165337)[0m                                    'log_prob_micro_batch_size_per_gpu': 1,
+[36m(main_task pid=1165337)[0m                                    'log_prob_use_dynamic_bsz': False,
+[36m(main_task pid=1165337)[0m                                    'max_model_len': 8192,
+[36m(main_task pid=1165337)[0m                                    'max_num_batched_tokens': 8192,
+[36m(main_task pid=1165337)[0m                                    'max_num_seqs': 1024,
+[36m(main_task pid=1165337)[0m                                    'max_tokens': 128,
+[36m(main_task pid=1165337)[0m                                    'n': 2,
+[36m(main_task pid=1165337)[0m                                    'name': 'vllm',
+[36m(main_task pid=1165337)[0m                                    'prompt_length': 1024,
+[36m(main_task pid=1165337)[0m                                    'response_length': 2048,
+[36m(main_task pid=1165337)[0m                                    'rollout_log_dir': '../saves/babyai_smoke_7088936/executer_logs',
+[36m(main_task pid=1165337)[0m                                    'send_interval': 1,
+[36m(main_task pid=1165337)[0m                                    'temperature': 1.0,
+[36m(main_task pid=1165337)[0m                                    'tensor_model_parallel_size': 1,
+[36m(main_task pid=1165337)[0m                                    'top_k': -1,
+[36m(main_task pid=1165337)[0m                                    'top_p': 1}},
+[36m(main_task pid=1165337)[0m  'algorithm': {'adv_estimator': 'grpo',
+[36m(main_task pid=1165337)[0m                'gamma': 1.0,
+[36m(main_task pid=1165337)[0m                'kl_ctrl': {'kl_coef': 0.001, 'type': 'fixed'},
+[36m(main_task pid=1165337)[0m                'kl_penalty': 'kl',
+[36m(main_task pid=1165337)[0m                'lam': 1.0,
+[36m(main_task pid=1165337)[0m                'rounds_ctrl': {'rounds': 8,
+[36m(main_task pid=1165337)[0m                                'steps_scaling_inter': 100,
+[36m(main_task pid=1165337)[0m                                'type': 'fixed'}},
+[36m(main_task pid=1165337)[0m  'critic': {'cliprange_value': 0.5,
+[36m(main_task pid=1165337)[0m             'forward_max_token_len_per_gpu': 32768,
+[36m(main_task pid=1165337)[0m             'forward_micro_batch_size': None,
+[36m(main_task pid=1165337)[0m             'forward_micro_batch_size_per_gpu': None,
+[36m(main_task pid=1165337)[0m             'grad_clip': 1.0,
+[36m(main_task pid=1165337)[0m             'model': {'enable_gradient_checkpointing': True,
+[36m(main_task pid=1165337)[0m                       'external_lib': None,
+[36m(main_task pid=1165337)[0m                       'fsdp_config': {'fsdp_size': -1,
+[36m(main_task pid=1165337)[0m                                       'grad_offload': False,
+[36m(main_task pid=1165337)[0m                                       'optimizer_offload': False,
+[36m(main_task pid=1165337)[0m                                       'param_offload': False,
+[36m(main_task pid=1165337)[0m                                       'wrap_policy': {'min_num_params': 0}},
+[36m(main_task pid=1165337)[0m                       'override_config': {},
+[36m(main_task pid=1165337)[0m                       'path': '~/models/deepseek-llm-7b-chat',
+[36m(main_task pid=1165337)[0m                       'tokenizer_path': '../models/Qwen2.5-0.5B-Instruct',
+[36m(main_task pid=1165337)[0m                       'use_remove_padding': False},
+[36m(main_task pid=1165337)[0m             'optim': {'lr': 1e-05,
+[36m(main_task pid=1165337)[0m                       'lr_warmup_steps_ratio': 0.0,
+[36m(main_task pid=1165337)[0m                       'min_lr_ratio': None,
+[36m(main_task pid=1165337)[0m                       'total_training_steps': -1,
+[36m(main_task pid=1165337)[0m                       'warmup_style': 'constant'},
+[36m(main_task pid=1165337)[0m             'ppo_epochs': 1,
+[36m(main_task pid=1165337)[0m             'ppo_max_token_len_per_gpu': 32768,
+[36m(main_task pid=1165337)[0m             'ppo_micro_batch_size': None,
+[36m(main_task pid=1165337)[0m             'ppo_micro_batch_size_per_gpu': None,
+[36m(main_task pid=1165337)[0m             'ppo_mini_batch_size': 4,
+[36m(main_task pid=1165337)[0m             'rollout_n': 2,
+[36m(main_task pid=1165337)[0m             'shuffle': False,
+[36m(main_task pid=1165337)[0m             'strategy': 'fsdp',
+[36m(main_task pid=1165337)[0m             'ulysses_sequence_parallel_size': 1,
+[36m(main_task pid=1165337)[0m             'use_dynamic_bsz': False},
+[36m(main_task pid=1165337)[0m  'custom_reward_function': {'name': None, 'path': None},
+[36m(main_task pid=1165337)[0m  'data': {'max_prompt_length': 1024,
+[36m(main_task pid=1165337)[0m           'max_response_length': 2048,
+[36m(main_task pid=1165337)[0m           'prompt_key': 'item_id',
+[36m(main_task pid=1165337)[0m           'return_raw_chat': True,
+[36m(main_task pid=1165337)[0m           'return_raw_input_ids': False,
+[36m(main_task pid=1165337)[0m           'shuffle': True,
+[36m(main_task pid=1165337)[0m           'tokenizer': None,
+[36m(main_task pid=1165337)[0m           'train_batch_size': 8,
+[36m(main_task pid=1165337)[0m           'train_file': '../AgentItemId/babyai_train.json',
+[36m(main_task pid=1165337)[0m           'val_batch_size': None,
+[36m(main_task pid=1165337)[0m           'val_files': '~/data/rlhf/gsm8k/test.parquet'},
+[36m(main_task pid=1165337)[0m  'reward_model': {'enable': False,
+[36m(main_task pid=1165337)[0m                   'forward_max_token_len_per_gpu': 32768,
+[36m(main_task pid=1165337)[0m                   'launch_reward_fn_async': False,
+[36m(main_task pid=1165337)[0m                   'max_length': None,
+[36m(main_task pid=1165337)[0m                   'micro_batch_size': None,
+[36m(main_task pid=1165337)[0m                   'micro_batch_size_per_gpu': None,
+[36m(main_task pid=1165337)[0m                   'model': {'external_lib': None,
+[36m(main_task pid=1165337)[0m                             'fsdp_config': {'fsdp_size': -1,
+[36m(main_task pid=1165337)[0m                                             'min_num_params': 0,
+[36m(main_task pid=1165337)[0m                                             'param_offload': False},
+[36m(main_task pid=1165337)[0m                             'input_tokenizer': '../models/Qwen2.5-0.5B-Instruct',
+[36m(main_task pid=1165337)[0m                             'path': '~/models/FsfairX-LLaMA3-RM-v0.1',
+[36m(main_task pid=1165337)[0m                             'use_remove_padding': False},
+[36m(main_task pid=1165337)[0m                   'reward_manager': None,
+[36m(main_task pid=1165337)[0m                   'sandbox_fusion': {'max_concurrent': 64, 'url': None},
+[36m(main_task pid=1165337)[0m                   'strategy': 'fsdp',
+[36m(main_task pid=1165337)[0m                   'ulysses_sequence_parallel_size': 1,
+[36m(main_task pid=1165337)[0m                   'use_dynamic_bsz': False},
+[36m(main_task pid=1165337)[0m  'trainer': {'critic_warmup': 0,
+[36m(main_task pid=1165337)[0m              'default_hdfs_dir': None,
+[36m(main_task pid=1165337)[0m              'default_local_dir': '../saves/babyai_smoke_7088936',
+[36m(main_task pid=1165337)[0m              'del_local_ckpt_after_load': False,
+[36m(main_task pid=1165337)[0m              'experiment_name': 'babyai_smoke_7088936',
+[36m(main_task pid=1165337)[0m              'logger': ['console', 'wandb'],
+[36m(main_task pid=1165337)[0m              'n_gpus_per_node': 1,
+[36m(main_task pid=1165337)[0m              'nnodes': 1,
+[36m(main_task pid=1165337)[0m              'project_name': 'agentgym_rl_pilot',
+[36m(main_task pid=1165337)[0m              'remove_previous_ckpt_in_save': False,
+[36m(main_task pid=1165337)[0m              'resume_from_path': False,
+[36m(main_task pid=1165337)[0m              'resume_mode': 'auto',
+[36m(main_task pid=1165337)[0m              'save_freq': -1,
+[36m(main_task pid=1165337)[0m              'storage_mode': 'local',
+[36m(main_task pid=1165337)[0m              'test_freq': -1,
+[36m(main_task pid=1165337)[0m              'total_epochs': 1,
+[36m(main_task pid=1165337)[0m              'total_training_steps': None,
+[36m(main_task pid=1165337)[0m              'val_generations_to_log_to_wandb': 0}}
+[36m(main_task pid=1165337)[0m [validate_config] All configuration checks passed successfully!
+[36m(main_task pid=1165337)[0m dataset len: 16
+[36m(main_task pid=1165337)[0m Size of train dataloader: 2
+[36m(main_task pid=1165337)[0m Total training steps: 2
+[36m(WorkerDict pid=1165508)[0m Model config after override: Qwen2Config {
+[36m(WorkerDict pid=1165508)[0m   "architectures": [
+[36m(WorkerDict pid=1165508)[0m     "Qwen2ForCausalLM"
+[36m(WorkerDict pid=1165508)[0m   ],
+[36m(WorkerDict pid=1165508)[0m   "attention_dropout": 0.0,
+[36m(WorkerDict pid=1165508)[0m   "dtype": "bfloat16",
+[36m(WorkerDict pid=1165508)[0m   "eos_token_id": 151645,
+[36m(WorkerDict pid=1165508)[0m   "hidden_act": "silu",
+[36m(WorkerDict pid=1165508)[0m   "hidden_size": 896,
+[36m(WorkerDict pid=1165508)[0m   "initializer_range": 0.02,
+[36m(WorkerDict pid=1165508)[0m   "intermediate_size": 4864,
+[36m(WorkerDict pid=1165508)[0m   "layer_types": [
+[36m(WorkerDict pid=1165508)[0m     "full_attention",
+[36m(WorkerDict pid=1165508)[0m     "full_attention",
+[36m(WorkerDict pid=1165508)[0m     "full_attention",
+[36m(WorkerDict pid=1165508)[0m     "full_attention",
+[36m(WorkerDict pid=1165508)[0m     "full_attention",
+[36m(WorkerDict pid=1165508)[0m     "full_attention",
+[36m(WorkerDict pid=1165508)[0m     "full_attention",
+[36m(WorkerDict pid=1165508)[0m     "full_attention",
+[36m(WorkerDict pid=1165508)[0m     "full_attention",
+[36m(WorkerDict pid=1165508)[0m     "full_attention",
+[36m(WorkerDict pid=1165508)[0m     "full_attention",
+[36m(WorkerDict pid=1165508)[0m     "full_attention",
+[36m(WorkerDict pid=1165508)[0m     "full_attention",
+[36m(WorkerDict pid=1165508)[0m     "full_attention",
+[36m(WorkerDict pid=1165508)[0m     "full_attention",
+[36m(WorkerDict pid=1165508)[0m     "full_attention",
+[36m(WorkerDict pid=1165508)[0m     "full_attention",
+[36m(WorkerDict pid=1165508)[0m     "full_attention",
+[36m(WorkerDict pid=1165508)[0m     "full_attention",
+[36m(WorkerDict pid=1165508)[0m     "full_attention",
+[36m(WorkerDict pid=1165508)[0m     "full_attention",
+[36m(WorkerDict pid=1165508)[0m     "full_attention",
+[36m(WorkerDict pid=1165508)[0m     "full_attention",
+[36m(WorkerDict pid=1165508)[0m     "full_attention"
+[36m(WorkerDict pid=1165508)[0m   ],
+[36m(WorkerDict pid=1165508)[0m   "max_position_embeddings": 32768,
+[36m(WorkerDict pid=1165508)[0m   "max_window_layers": 21,
+[36m(WorkerDict pid=1165508)[0m   "model_type": "qwen2",
+[36m(WorkerDict pid=1165508)[0m   "num_attention_heads": 14,
+[36m(WorkerDict pid=1165508)[0m   "num_hidden_layers": 24,
+[36m(WorkerDict pid=1165508)[0m   "num_key_value_heads": 2,
+[36m(WorkerDict pid=1165508)[0m   "pad_token_id": 151643,
+[36m(WorkerDict pid=1165508)[0m   "rms_norm_eps": 1e-06,
+[36m(WorkerDict pid=1165508)[0m   "rope_scaling": null,
+[36m(WorkerDict pid=1165508)[0m   "rope_theta": 1000000.0,
+[36m(WorkerDict pid=1165508)[0m   "sliding_window": null,
+[36m(WorkerDict pid=1165508)[0m   "tie_word_embeddings": true,
+[36m(WorkerDict pid=1165508)[0m   "transformers_version": "4.57.6",
+[36m(WorkerDict pid=1165508)[0m   "use_cache": true,
+[36m(WorkerDict pid=1165508)[0m   "use_sliding_window": false,
+[36m(WorkerDict pid=1165508)[0m   "vocab_size": 151936
+[36m(WorkerDict pid=1165508)[0m }
+[36m(WorkerDict pid=1165508)[0m 

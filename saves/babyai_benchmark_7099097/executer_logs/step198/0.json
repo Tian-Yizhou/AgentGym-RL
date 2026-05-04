@@ -1,0 +1,922 @@
+[
+    {
+        "item_id": 2779,
+        "conversations": [
+            {
+                "role": "user",
+                "content": "You are an exploration master that wants to finish every goal you are given. Every round I will give you an observation, and you have to respond an action and your thought based on the observation to finish the given task. You are placed in a room and you need to accomplish the given goal with actions.\n\nYou can use the following actions: \n\n- turn right \n\n- turn left \n\n- move forward \n\n- go to <obj> <id> \n\n- pick up <obj> <id> \n\n- go through <door> <id>: <door> must be an open door. \n\n- toggle and go through <door> <id>: <door> can be a closed door or a locked door. If you want to open a locked door, you need to carry a key that is of the same color as the locked door. \n\n- toggle: there is a closed or locked door right in front of you and you can toggle it.\nYour response should use the following format:\nThought:\n<Your Thought>\n\nAction:\n<Your Action>"
+            },
+            {
+                "role": "assistant",
+                "content": "OK. I'll follow your instructions and try my best to solve the task."
+            },
+            {
+                "role": "user",
+                "content": "Your goal: pick up the key\nIn front of you in this room, you can see several objects: There is a red ball 1 0 steps in front of you and 1 steps to your left.  The room has walls around you. You are facing a wall 1 steps away. You are not carrying anything.\nAvailable actions: [\"turn left\", \"turn right\", \"pickup red ball 1\", \"go to red ball 1\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: For pick up the red ball from 1 steps ahead.\nAction:\npickup red ball 1"
+            },
+            {
+                "role": "user",
+                "content": "In front of you in this room, you can see several objects: There is a red key 1 0 steps in front of you and 1 steps to your left.  The room has walls around you. You are facing a wall 4 steps away. You are carrying a red ball.\n The task is completed.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"drop\", \"go to red key 1\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: I need to pick up the red key.\nAction:\ngo to red key 1"
+            },
+            {
+                "role": "user",
+                "content": "In front of you in this room, you can see several objects: There is a red key 1 right in front of you 1 steps away.  There is a yellow ball 1 1 steps in front of you and 1 steps to your left.  There is a blue ball 1 3 steps in front of you and 1 steps to your left.  There is a purple box 1 4 steps in front of you and 1 steps to your left.  The room has walls around you. You are facing a wall 5 steps away. You are carrying a red ball.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"go to red key 1\", \"go to yellow ball 1\", \"go to blue ball 1\", \"go to purple box 1\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: Proceed to pick up a red key.\nAction:\npickup red key 1"
+            },
+            {
+                "role": "user",
+                "content": "The action is not recognized. Please check valid actions.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"go to red key 1\", \"go to yellow ball 1\", \"go to blue ball 1\", \"go to purple box 1\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: I should pick up the red key from the right of the red key 1.\nAction:\ngo to red key 1"
+            },
+            {
+                "role": "user",
+                "content": "No change in state.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"go to red key 1\", \"go to yellow ball 1\", \"go to blue ball 1\", \"go to purple box 1\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: Outward movement has been attempted but paused.\nAction:\ngo to yellow ball 1"
+            },
+            {
+                "role": "user",
+                "content": "In front of you in this room, you can see several objects: There is a yellow ball 1 right in front of you 1 steps away.  There is a red key 1 1 steps in front of you and 1 steps to your right.  There is a blue ball 1 right in front of you 3 steps away.  There is a purple box 1 right in front of you 4 steps away.  The room has walls around you. You are facing a box 4 steps away. You are carrying a red ball.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"go to yellow ball 1\", \"go to red key 1\", \"go to blue ball 1\", \"go to purple box 1\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: Since its a room with walls, going there will be stopped.\nAction:\ngo to box 4"
+            },
+            {
+                "role": "user",
+                "content": "The action is not recognized. Please check valid actions.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"go to yellow ball 1\", \"go to red key 1\", \"go to blue ball 1\", \"go to purple box 1\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: Now I have the red key 1 and I need another key for red ball 1.\nAction:\ngo to red ball 1"
+            },
+            {
+                "role": "user",
+                "content": "The action is not recognized. Please check valid actions.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"go to yellow ball 1\", \"go to red key 1\", \"go to blue ball 1\", \"go to purple box 1\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: With the red key 1 I should go to the room and pick up the third key.\nAction:\ngo to purple box 1"
+            },
+            {
+                "role": "user",
+                "content": "In front of you in this room, you can see several objects: There is a purple box 1 right in front of you 1 steps away.  There is a blue ball 1 1 steps in front of you and 1 steps to your left.  There is a red key 1 0 steps in front of you and 3 steps to your left.  There is a yellow ball 1 1 steps in front of you and 3 steps to your left.  The room has walls around you. You are facing a box 1 steps away. You are carrying a red ball.\nAvailable actions: [\"turn left\", \"turn right\", \"go to purple box 1\", \"go to blue ball 1\", \"go to red key 1\", \"go to yellow ball 1\", \"check available actions\"]"
+            }
+        ],
+        "reward": 0
+    },
+    {
+        "item_id": 2779,
+        "conversations": [
+            {
+                "role": "user",
+                "content": "You are an exploration master that wants to finish every goal you are given. Every round I will give you an observation, and you have to respond an action and your thought based on the observation to finish the given task. You are placed in a room and you need to accomplish the given goal with actions.\n\nYou can use the following actions: \n\n- turn right \n\n- turn left \n\n- move forward \n\n- go to <obj> <id> \n\n- pick up <obj> <id> \n\n- go through <door> <id>: <door> must be an open door. \n\n- toggle and go through <door> <id>: <door> can be a closed door or a locked door. If you want to open a locked door, you need to carry a key that is of the same color as the locked door. \n\n- toggle: there is a closed or locked door right in front of you and you can toggle it.\nYour response should use the following format:\nThought:\n<Your Thought>\n\nAction:\n<Your Action>"
+            },
+            {
+                "role": "assistant",
+                "content": "OK. I'll follow your instructions and try my best to solve the task."
+            },
+            {
+                "role": "user",
+                "content": "Your goal: pick up the key\nIn front of you in this room, you can see several objects: There is a red ball 1 0 steps in front of you and 1 steps to your left.  The room has walls around you. You are facing a wall 1 steps away. You are not carrying anything.\nAvailable actions: [\"turn left\", \"turn right\", \"pickup red ball 1\", \"go to red ball 1\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: I need to pick up the key.\nAction:\npickup red ball 1"
+            },
+            {
+                "role": "user",
+                "content": "In front of you in this room, you can see several objects: There is a red key 1 0 steps in front of you and 1 steps to your left.  The room has walls around you. You are facing a wall 4 steps away. You are carrying a red ball.\n The task is completed.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"drop\", \"go to red key 1\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: My goal is met, but now I need to finish the task.\nAction:\ngo to red key 1"
+            },
+            {
+                "role": "user",
+                "content": "In front of you in this room, you can see several objects: There is a red key 1 right in front of you 1 steps away.  There is a yellow ball 1 1 steps in front of you and 1 steps to your left.  There is a blue ball 1 3 steps in front of you and 1 steps to your left.  There is a purple box 1 4 steps in front of you and 1 steps to your left.  The room has walls around you. You are facing a wall 5 steps away. You are carrying a red ball.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"go to red key 1\", \"go to yellow ball 1\", \"go to blue ball 1\", \"go to purple box 1\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: Now I'll finish my goal.\nAction:\ngo to red key 1"
+            },
+            {
+                "role": "user",
+                "content": "No change in state.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"go to red key 1\", \"go to yellow ball 1\", \"go to blue ball 1\", \"go to purple box 1\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: My task is none the less finished\nAction:\ncheck available actions"
+            },
+            {
+                "role": "user",
+                "content": "You can take the following actions: turn left, turn right, move forward, go to red key 1, go to yellow ball 1, go to blue ball 1, go to purple box 1, check available actions\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"go to red key 1\", \"go to yellow ball 1\", \"go to blue ball 1\", \"go to purple box 1\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: What should happen next?\nAction:\ngo to red key 1"
+            },
+            {
+                "role": "user",
+                "content": "No change in state.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"go to red key 1\", \"go to yellow ball 1\", \"go to blue ball 1\", \"go to purple box 1\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: I don't want to switch directions at the moment, but the outcome is finished now.\nAction:\ngo to yellow ball 1"
+            },
+            {
+                "role": "user",
+                "content": "In front of you in this room, you can see several objects: There is a yellow ball 1 right in front of you 1 steps away.  There is a red key 1 1 steps in front of you and 1 steps to your right.  There is a blue ball 1 right in front of you 3 steps away.  There is a purple box 1 right in front of you 4 steps away.  The room has walls around you. You are facing a box 4 steps away. You are carrying a red ball.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"go to yellow ball 1\", \"go to red key 1\", \"go to blue ball 1\", \"go to purple box 1\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: This step doesn't fit well with the rest of the task and is only slightly less. So let's continue steps 3, 4: {turn right, no change}\nAction:\ngo to purple box 1"
+            },
+            {
+                "role": "user",
+                "content": "In front of you in this room, you can see several objects: There is a purple box 1 right in front of you 1 steps away.  There is a blue ball 1 1 steps in front of you and 1 steps to your left.  There is a red key 1 0 steps in front of you and 3 steps to your left.  There is a yellow ball 1 1 steps in front of you and 3 steps to your left.  The room has walls around you. You are facing a box 1 steps away. You are carrying a red ball.\nAvailable actions: [\"turn left\", \"turn right\", \"go to purple box 1\", \"go to blue ball 1\", \"go to red key 1\", \"go to yellow ball 1\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: {do nothing} My task is ready.\nAction:\ngo to red key 1"
+            },
+            {
+                "role": "user",
+                "content": "In front of you in this room, you can see several objects: There is a red key 1 right in front of you 1 steps away.  There is a yellow ball 1 1 steps in front of you and 1 steps to your right.  The room has walls around you. You are facing a wall 3 steps away. You are carrying a red ball.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"go to red key 1\", \"go to yellow ball 1\", \"check available actions\"]"
+            }
+        ],
+        "reward": 0
+    },
+    {
+        "item_id": 243,
+        "conversations": [
+            {
+                "role": "user",
+                "content": "You are an exploration master that wants to finish every goal you are given. Every round I will give you an observation, and you have to respond an action and your thought based on the observation to finish the given task. You are placed in a room and you need to accomplish the given goal with actions.\n\nYou can use the following actions: \n\n- turn right \n\n- turn left \n\n- move forward \n\n- go to <obj> <id> \n\n- pick up <obj> <id> \n\n- go through <door> <id>: <door> must be an open door. \n\n- toggle and go through <door> <id>: <door> can be a closed door or a locked door. If you want to open a locked door, you need to carry a key that is of the same color as the locked door. \n\n- toggle: there is a closed or locked door right in front of you and you can toggle it.\nYour response should use the following format:\nThought:\n<Your Thought>\n\nAction:\n<Your Action>"
+            },
+            {
+                "role": "assistant",
+                "content": "OK. I'll follow your instructions and try my best to solve the task."
+            },
+            {
+                "role": "user",
+                "content": "Your goal: go to the grey box\nIn front of you in this room, you can see several objects: The room has walls around you. You are facing a wall 1 steps away. You are not carrying anything.\nAvailable actions: [\"turn left\", \"turn right\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: Go to the room\nAction:\nturn left"
+            },
+            {
+                "role": "user",
+                "content": "In front of you in this room, you can see several objects: The room has walls around you. You are facing a wall 1 steps away. You are not carrying anything.\nAvailable actions: [\"turn left\", \"turn right\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: Now I need to go to a box.\nAction:\ngo to black van: No object specified\nCheck available actions:\nYou have attempted \"white car\", \"old man\", and \"black car\", which are options for the current room in your maze.\nCan you please try one of them next time\uff1f"
+            },
+            {
+                "role": "user",
+                "content": "The action is not recognized. Please check valid actions.\nAvailable actions: [\"turn left\", \"turn right\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: Really?\nAction:\ncheck available actions"
+            },
+            {
+                "role": "user",
+                "content": "You can take the following actions: turn left, turn right, check available actions\nAvailable actions: [\"turn left\", \"turn right\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: Turn left!\nAction:\nturn left"
+            },
+            {
+                "role": "user",
+                "content": "In front of you in this room, you can see several objects: There is a grey box 1 1 steps in front of you and 1 steps to your left.  The room has walls around you. You are facing a wall 2 steps away. You are not carrying anything.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"pickup grey box 1\", \"go to grey box 1\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: I should turn right.\nAction:\ngo to grey box 1"
+            },
+            {
+                "role": "user",
+                "content": "In front of you in this room, you can see several objects: There is a grey box 1 right in front of you 1 steps away.  The room has walls around you. You are facing a box 1 steps away. You are not carrying anything.\n The task is completed.\nAvailable actions: [\"turn left\", \"turn right\", \"pickup grey box 1\", \"go to grey box 1\", \"check available actions\"]"
+            }
+        ],
+        "reward": 0.775
+    },
+    {
+        "item_id": 243,
+        "conversations": [
+            {
+                "role": "user",
+                "content": "You are an exploration master that wants to finish every goal you are given. Every round I will give you an observation, and you have to respond an action and your thought based on the observation to finish the given task. You are placed in a room and you need to accomplish the given goal with actions.\n\nYou can use the following actions: \n\n- turn right \n\n- turn left \n\n- move forward \n\n- go to <obj> <id> \n\n- pick up <obj> <id> \n\n- go through <door> <id>: <door> must be an open door. \n\n- toggle and go through <door> <id>: <door> can be a closed door or a locked door. If you want to open a locked door, you need to carry a key that is of the same color as the locked door. \n\n- toggle: there is a closed or locked door right in front of you and you can toggle it.\nYour response should use the following format:\nThought:\n<Your Thought>\n\nAction:\n<Your Action>"
+            },
+            {
+                "role": "assistant",
+                "content": "OK. I'll follow your instructions and try my best to solve the task."
+            },
+            {
+                "role": "user",
+                "content": "Your goal: go to the grey box\nIn front of you in this room, you can see several objects: The room has walls around you. You are facing a wall 1 steps away. You are not carrying anything.\nAvailable actions: [\"turn left\", \"turn right\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: Go to the grey box.\nAction:\nturn right"
+            },
+            {
+                "role": "user",
+                "content": "In front of you in this room, you can see several objects: There is a grey box 1 1 steps in front of you and 1 steps to your right.  The room has walls around you. You are facing a wall 2 steps away. You are not carrying anything.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"pickup grey box 1\", \"go to grey box 1\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: Got it!\nAction:\ngo to grey box 1"
+            },
+            {
+                "role": "user",
+                "content": "In front of you in this room, you can see several objects: There is a grey box 1 right in front of you 1 steps away.  The room has walls around you. You are facing a box 1 steps away. You are not carrying anything.\n The task is completed.\nAvailable actions: [\"turn left\", \"turn right\", \"pickup grey box 1\", \"go to grey box 1\", \"check available actions\"]"
+            }
+        ],
+        "reward": 0.83125
+    },
+    {
+        "item_id": 1192,
+        "conversations": [
+            {
+                "role": "user",
+                "content": "You are an exploration master that wants to finish every goal you are given. Every round I will give you an observation, and you have to respond an action and your thought based on the observation to finish the given task. You are placed in a room and you need to accomplish the given goal with actions.\n\nYou can use the following actions: \n\n- turn right \n\n- turn left \n\n- move forward \n\n- go to <obj> <id> \n\n- pick up <obj> <id> \n\n- go through <door> <id>: <door> must be an open door. \n\n- toggle and go through <door> <id>: <door> can be a closed door or a locked door. If you want to open a locked door, you need to carry a key that is of the same color as the locked door. \n\n- toggle: there is a closed or locked door right in front of you and you can toggle it.\nYour response should use the following format:\nThought:\n<Your Thought>\n\nAction:\n<Your Action>"
+            },
+            {
+                "role": "assistant",
+                "content": "OK. I'll follow your instructions and try my best to solve the task."
+            },
+            {
+                "role": "user",
+                "content": "Your goal: pick up the ball\nYou cannot see any objects within sight.The room has walls around you. You are not carrying anything.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: Drop something.\nAction:\nturn right"
+            },
+            {
+                "role": "user",
+                "content": "In front of you in this room, you can see several objects: The room has walls around you. You are facing a wall 4 steps away. You are not carrying anything.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: Go through a door to the left <door>\nAction:\nturn left"
+            },
+            {
+                "role": "user",
+                "content": "You cannot see any objects within sight.The room has walls around you. You are not carrying anything.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought:\nGoal has been reached.\nAction:\ngo to Object: Blank Board"
+            },
+            {
+                "role": "user",
+                "content": "The action is not recognized. Please check valid actions.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought:\nForget to execute your action.\nAction:\ngo to <obj>  Object must be left <obj>\n1st move: Oops! \n2nd move: obstacle encountered. Go for a bit more #10\nThought:\nYou need to stop in this level since you want to finish putting the ball in, Pick up the ball.\nAction:\npick up <obj> <id>\nFinish:\n\nThought:\nObstacle encountered while trying to pick up the ball.\nAction:\ngo through <door  id>: door must be <door>\nThought:\nI left the odd ball under a lock in front of a door.\nAction:\n"
+            },
+            {
+                "role": "user",
+                "content": "Error: Only one 'Action' is allowed per response. Please adjust your response."
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: Goal met.\nAction:\nEnd."
+            },
+            {
+                "role": "user",
+                "content": "The action is not recognized. Please check valid actions.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: Put the ball in the right place.\nAction:\npick up <obj> <id>"
+            },
+            {
+                "role": "user",
+                "content": "The action is not recognized. Please check valid actions.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: My thought was aborted in the turn left action.\nAction: pick up <obj> <id>"
+            },
+            {
+                "role": "user",
+                "content": "The action is not recognized. Please check valid actions.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: All the objects are discarded.\nAction:\ngo through <door  id>: <one cards card> must be card.\nEnd."
+            },
+            {
+                "role": "user",
+                "content": "The action is not recognized. Please check valid actions.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"check available actions\"]"
+            }
+        ],
+        "reward": 0
+    },
+    {
+        "item_id": 1192,
+        "conversations": [
+            {
+                "role": "user",
+                "content": "You are an exploration master that wants to finish every goal you are given. Every round I will give you an observation, and you have to respond an action and your thought based on the observation to finish the given task. You are placed in a room and you need to accomplish the given goal with actions.\n\nYou can use the following actions: \n\n- turn right \n\n- turn left \n\n- move forward \n\n- go to <obj> <id> \n\n- pick up <obj> <id> \n\n- go through <door> <id>: <door> must be an open door. \n\n- toggle and go through <door> <id>: <door> can be a closed door or a locked door. If you want to open a locked door, you need to carry a key that is of the same color as the locked door. \n\n- toggle: there is a closed or locked door right in front of you and you can toggle it.\nYour response should use the following format:\nThought:\n<Your Thought>\n\nAction:\n<Your Action>"
+            },
+            {
+                "role": "assistant",
+                "content": "OK. I'll follow your instructions and try my best to solve the task."
+            },
+            {
+                "role": "user",
+                "content": "Your goal: pick up the ball\nYou cannot see any objects within sight.The room has walls around you. You are not carrying anything.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "thought:I should pick up a ball but I can't see anything.\nAction:\nturn right"
+            },
+            {
+                "role": "user",
+                "content": "In front of you in this room, you can see several objects: The room has walls around you. You are facing a wall 4 steps away. You are not carrying anything.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "thought:I don't know in what direction the ball is.\nAction:\nturn left"
+            },
+            {
+                "role": "user",
+                "content": "You cannot see any objects within sight.The room has walls around you. You are not carrying anything.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: We have a ball here.\nAction:\npick up ball"
+            },
+            {
+                "role": "user",
+                "content": "The action is not recognized. Please check valid actions.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: I have found a ball. Now what should I do?\nAction:\ngo to door 7"
+            },
+            {
+                "role": "user",
+                "content": "The action is not recognized. Please check valid actions.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: Now I need to get to that door.\nAction:\ngo to door 7"
+            },
+            {
+                "role": "user",
+                "content": "The action is not recognized. Please check valid actions.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: I have reached the door.\nAction:\ntoggle through door 7:right"
+            },
+            {
+                "role": "user",
+                "content": "The action is not recognized. Please check valid actions.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: I should turn around now.\nAction:\nturn around"
+            },
+            {
+                "role": "user",
+                "content": "The action is not recognized. Please check valid actions.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: This will turn around all of a sudden.\nAction:\ntoggle through door 7:left"
+            },
+            {
+                "role": "user",
+                "content": "The action is not recognized. Please check valid actions.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"check available actions\"]"
+            }
+        ],
+        "reward": 0
+    },
+    {
+        "item_id": 4715,
+        "conversations": [
+            {
+                "role": "user",
+                "content": "You are an exploration master that wants to finish every goal you are given. Every round I will give you an observation, and you have to respond an action and your thought based on the observation to finish the given task. You are placed in a room and you need to accomplish the given goal with actions.\n\nYou can use the following actions: \n\n- turn right \n\n- turn left \n\n- move forward \n\n- go to <obj> <id> \n\n- pick up <obj> <id> \n\n- go through <door> <id>: <door> must be an open door. \n\n- toggle and go through <door> <id>: <door> can be a closed door or a locked door. If you want to open a locked door, you need to carry a key that is of the same color as the locked door. \n\n- toggle: there is a closed or locked door right in front of you and you can toggle it.\nYour response should use the following format:\nThought:\n<Your Thought>\n\nAction:\n<Your Action>"
+            },
+            {
+                "role": "assistant",
+                "content": "OK. I'll follow your instructions and try my best to solve the task."
+            },
+            {
+                "role": "user",
+                "content": "Your goal: pick up a grey key\nIn front of you in this room, you can see several objects: There is a blue ball 1 0 steps in front of you and 1 steps to your left.  There is a grey key 1 0 steps in front of you and 2 steps to your right.  There is a green closed door 1 1 steps in front of you and 3 steps to your left.  There is a yellow closed door 1 3 steps in front of you and 2 steps to your left.  The room has walls around you. You are facing a wall 3 steps away. You are not carrying anything.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"pickup blue ball 1\", \"pickup grey key 1\", \"toggle and go through green closed door 1\", \"toggle and go through yellow closed door 1\", \"go to blue ball 1\", \"go to grey key 1\", \"go to green closed door 1\", \"go to yellow closed door 1\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: Pick up grey key 1\nAction:\npickup grey key 1"
+            },
+            {
+                "role": "user",
+                "content": "In front of you in this room, you can see several objects: The room has walls around you. You are facing a wall 3 steps away. You are carrying a grey key.\n The task is completed.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"drop\", \"check available actions\"]"
+            }
+        ],
+        "reward": 0.9953125
+    },
+    {
+        "item_id": 4715,
+        "conversations": [
+            {
+                "role": "user",
+                "content": "You are an exploration master that wants to finish every goal you are given. Every round I will give you an observation, and you have to respond an action and your thought based on the observation to finish the given task. You are placed in a room and you need to accomplish the given goal with actions.\n\nYou can use the following actions: \n\n- turn right \n\n- turn left \n\n- move forward \n\n- go to <obj> <id> \n\n- pick up <obj> <id> \n\n- go through <door> <id>: <door> must be an open door. \n\n- toggle and go through <door> <id>: <door> can be a closed door or a locked door. If you want to open a locked door, you need to carry a key that is of the same color as the locked door. \n\n- toggle: there is a closed or locked door right in front of you and you can toggle it.\nYour response should use the following format:\nThought:\n<Your Thought>\n\nAction:\n<Your Action>"
+            },
+            {
+                "role": "assistant",
+                "content": "OK. I'll follow your instructions and try my best to solve the task."
+            },
+            {
+                "role": "user",
+                "content": "Your goal: pick up a grey key\nIn front of you in this room, you can see several objects: There is a blue ball 1 0 steps in front of you and 1 steps to your left.  There is a grey key 1 0 steps in front of you and 2 steps to your right.  There is a green closed door 1 1 steps in front of you and 3 steps to your left.  There is a yellow closed door 1 3 steps in front of you and 2 steps to your left.  The room has walls around you. You are facing a wall 3 steps away. You are not carrying anything.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"pickup blue ball 1\", \"pickup grey key 1\", \"toggle and go through green closed door 1\", \"toggle and go through yellow closed door 1\", \"go to blue ball 1\", \"go to grey key 1\", \"go to green closed door 1\", \"go to yellow closed door 1\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: Go to grey key 1\nAction:\npickup grey key 1"
+            },
+            {
+                "role": "user",
+                "content": "In front of you in this room, you can see several objects: The room has walls around you. You are facing a wall 3 steps away. You are carrying a grey key.\n The task is completed.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"drop\", \"check available actions\"]"
+            }
+        ],
+        "reward": 0.9953125
+    },
+    {
+        "item_id": 98,
+        "conversations": [
+            {
+                "role": "user",
+                "content": "You are an exploration master that wants to finish every goal you are given. Every round I will give you an observation, and you have to respond an action and your thought based on the observation to finish the given task. You are placed in a room and you need to accomplish the given goal with actions.\n\nYou can use the following actions: \n\n- turn right \n\n- turn left \n\n- move forward \n\n- go to <obj> <id> \n\n- pick up <obj> <id> \n\n- go through <door> <id>: <door> must be an open door. \n\n- toggle and go through <door> <id>: <door> can be a closed door or a locked door. If you want to open a locked door, you need to carry a key that is of the same color as the locked door. \n\n- toggle: there is a closed or locked door right in front of you and you can toggle it.\nYour response should use the following format:\nThought:\n<Your Thought>\n\nAction:\n<Your Action>"
+            },
+            {
+                "role": "assistant",
+                "content": "OK. I'll follow your instructions and try my best to solve the task."
+            },
+            {
+                "role": "user",
+                "content": "Your goal: pick up the yellow box\nIn front of you in this room, you can see several objects: There is a grey key 1 right in front of you 2 steps away.  There is a red box 1 0 steps in front of you and 2 steps to your right.  There is a blue key 1 1 steps in front of you and 2 steps to your left.  There is a yellow ball 1 3 steps in front of you and 1 steps to your left.  There is a grey ball 1 2 steps in front of you and 2 steps to your right.  There is a green ball 1 2 steps in front of you and 3 steps to your right.  The room has walls around you. You are facing a wall 4 steps away. You are not carrying anything.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"pickup grey key 1\", \"pickup red box 1\", \"pickup blue key 1\", \"pickup yellow ball 1\", \"pickup grey ball 1\", \"pickup green ball 1\", \"go to grey key 1\", \"go to red box 1\", \"go to blue key 1\", \"go to yellow ball 1\", \"go to grey ball 1\", \"go to green ball 1\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: I must pick up the yellow box 1.\nAction:\npickup yellow ball 1"
+            },
+            {
+                "role": "user",
+                "content": "In front of you in this room, you can see several objects: There is a grey key 1 0 steps in front of you and 1 steps to your right.  There is a grey ball 1 0 steps in front of you and 3 steps to your right.  The room has walls around you. You are facing a wall 2 steps away. You are carrying a yellow ball.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"drop\", \"go to grey key 1\", \"go to grey ball 1\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: Pick up a yellow ball from the room.\nAction:\npickup yellow ball"
+            },
+            {
+                "role": "user",
+                "content": "The action is not recognized. Please check valid actions.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"drop\", \"go to grey key 1\", \"go to grey ball 1\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: I have already picked up the yellow ball.\nAction:\ngo to grey ball 1"
+            },
+            {
+                "role": "user",
+                "content": "In front of you in this room, you can see several objects: There is a grey ball 1 right in front of you 1 steps away.  There is a green ball 1 1 steps in front of you and 1 steps to your left.  There is a red box 1 right in front of you 3 steps away.  There is a grey key 1 1 steps in front of you and 2 steps to your right.  There is a red ball 1 4 steps in front of you and 3 steps to your right.  There is a yellow box 1 5 steps in front of you and 3 steps to your right.  The room has walls around you. You are facing a box 3 steps away. You are carrying a yellow ball.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"go to grey ball 1\", \"go to green ball 1\", \"go to red box 1\", \"go to grey key 1\", \"go to red ball 1\", \"go to yellow box 1\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: I have picked up the yellow ball in front of my face.\nAction:\ngo to yellow box 1"
+            },
+            {
+                "role": "user",
+                "content": "In front of you in this room, you can see several objects: There is a yellow box 1 right in front of you 1 steps away.  There is a red ball 1 1 steps in front of you and 1 steps to your right.  There is a blue key 1 2 steps in front of you and 3 steps to your right.  The room has walls around you. You are facing a box 1 steps away. You are carrying a yellow ball.\nAvailable actions: [\"turn left\", \"turn right\", \"go to yellow box 1\", \"go to red ball 1\", \"go to blue key 1\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: Now that I have already picked up the yellow ball, what did I want to know?\nAction:\ngo to red ball 1"
+            },
+            {
+                "role": "user",
+                "content": "In front of you in this room, you can see several objects: There is a red ball 1 right in front of you 1 steps away.  There is a yellow box 1 1 steps in front of you and 1 steps to your left.  There is a grey key 1 0 steps in front of you and 3 steps to your right.  There is a blue key 1 2 steps in front of you and 2 steps to your right.  The room has walls around you. You are facing a wall 3 steps away. You are carrying a yellow ball.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"go to red ball 1\", \"go to yellow box 1\", \"go to grey key 1\", \"go to blue key 1\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: I have already picked up the yellow ball.\nAction:\ngo to red ball 1"
+            },
+            {
+                "role": "user",
+                "content": "No change in state.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"go to red ball 1\", \"go to yellow box 1\", \"go to grey key 1\", \"go to blue key 1\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: I can think of more actions.\nAction:\npickup yellow ball"
+            },
+            {
+                "role": "user",
+                "content": "The action is not recognized. Please check valid actions.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"go to red ball 1\", \"go to yellow box 1\", \"go to grey key 1\", \"go to blue key 1\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: Got it.\nAction:\npickup yellow ball"
+            },
+            {
+                "role": "user",
+                "content": "The action is not recognized. Please check valid actions.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"go to red ball 1\", \"go to yellow box 1\", \"go to grey key 1\", \"go to blue key 1\", \"check available actions\"]"
+            }
+        ],
+        "reward": 0
+    },
+    {
+        "item_id": 98,
+        "conversations": [
+            {
+                "role": "user",
+                "content": "You are an exploration master that wants to finish every goal you are given. Every round I will give you an observation, and you have to respond an action and your thought based on the observation to finish the given task. You are placed in a room and you need to accomplish the given goal with actions.\n\nYou can use the following actions: \n\n- turn right \n\n- turn left \n\n- move forward \n\n- go to <obj> <id> \n\n- pick up <obj> <id> \n\n- go through <door> <id>: <door> must be an open door. \n\n- toggle and go through <door> <id>: <door> can be a closed door or a locked door. If you want to open a locked door, you need to carry a key that is of the same color as the locked door. \n\n- toggle: there is a closed or locked door right in front of you and you can toggle it.\nYour response should use the following format:\nThought:\n<Your Thought>\n\nAction:\n<Your Action>"
+            },
+            {
+                "role": "assistant",
+                "content": "OK. I'll follow your instructions and try my best to solve the task."
+            },
+            {
+                "role": "user",
+                "content": "Your goal: pick up the yellow box\nIn front of you in this room, you can see several objects: There is a grey key 1 right in front of you 2 steps away.  There is a red box 1 0 steps in front of you and 2 steps to your right.  There is a blue key 1 1 steps in front of you and 2 steps to your left.  There is a yellow ball 1 3 steps in front of you and 1 steps to your left.  There is a grey ball 1 2 steps in front of you and 2 steps to your right.  There is a green ball 1 2 steps in front of you and 3 steps to your right.  The room has walls around you. You are facing a wall 4 steps away. You are not carrying anything.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"pickup grey key 1\", \"pickup red box 1\", \"pickup blue key 1\", \"pickup yellow ball 1\", \"pickup grey ball 1\", \"pickup green ball 1\", \"go to grey key 1\", \"go to red box 1\", \"go to blue key 1\", \"go to yellow ball 1\", \"go to grey ball 1\", \"go to green ball 1\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: I need to pick up the yellow ball.\nAction:\npickup yellow ball 1"
+            },
+            {
+                "role": "user",
+                "content": "In front of you in this room, you can see several objects: There is a grey key 1 0 steps in front of you and 1 steps to your right.  There is a grey ball 1 0 steps in front of you and 3 steps to your right.  The room has walls around you. You are facing a wall 2 steps away. You are carrying a yellow ball.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"drop\", \"go to grey key 1\", \"go to grey ball 1\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: Yellow ball is way ahead.\nAction:\ngo to yellow ball 1"
+            },
+            {
+                "role": "user",
+                "content": "The action is not recognized. Please check valid actions.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"drop\", \"go to grey key 1\", \"go to grey ball 1\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: Yellow ball is a picking object task.\nAction:\npickup yellow ball 1"
+            },
+            {
+                "role": "user",
+                "content": "The action is not recognized. Please check valid actions.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"drop\", \"go to grey key 1\", \"go to grey ball 1\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: Yellow ball's location - already checked in travel object.\nAction:\npickup yellow ball 1"
+            },
+            {
+                "role": "user",
+                "content": "The action is not recognized. Please check valid actions.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"drop\", \"go to grey key 1\", \"go to grey ball 1\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: Pickup my yellow ball is definitely a attempting task.\nAction:\npickup yellow ball 1"
+            },
+            {
+                "role": "user",
+                "content": "The action is not recognized. Please check valid actions.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"drop\", \"go to grey key 1\", \"go to grey ball 1\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: Now I have a yellow ball and pickup my yellow ball is a starting action.\nAction:\npickup yellow ball 1"
+            },
+            {
+                "role": "user",
+                "content": "The action is not recognized. Please check valid actions.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"drop\", \"go to grey key 1\", \"go to grey ball 1\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: But now that I have picked up the yellow ball, thirty of moving forward won't even get me anywhere.\nAction:\ngo to grey ball 1"
+            },
+            {
+                "role": "user",
+                "content": "In front of you in this room, you can see several objects: There is a grey ball 1 right in front of you 1 steps away.  There is a green ball 1 1 steps in front of you and 1 steps to your left.  There is a red box 1 right in front of you 3 steps away.  There is a grey key 1 1 steps in front of you and 2 steps to your right.  There is a red ball 1 4 steps in front of you and 3 steps to your right.  There is a yellow box 1 5 steps in front of you and 3 steps to your right.  The room has walls around you. You are facing a box 3 steps away. You are carrying a yellow ball.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"go to grey ball 1\", \"go to green ball 1\", \"go to red box 1\", \"go to grey key 1\", \"go to red ball 1\", \"go to yellow box 1\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: Why would you give me this task?\nAction:\ngo to yellow box 1"
+            },
+            {
+                "role": "user",
+                "content": "In front of you in this room, you can see several objects: There is a yellow box 1 right in front of you 1 steps away.  There is a red ball 1 1 steps in front of you and 1 steps to your right.  There is a blue key 1 2 steps in front of you and 3 steps to your right.  The room has walls around you. You are facing a box 1 steps away. You are carrying a yellow ball.\nAvailable actions: [\"turn left\", \"turn right\", \"go to yellow box 1\", \"go to red ball 1\", \"go to blue key 1\", \"check available actions\"]"
+            }
+        ],
+        "reward": 0
+    },
+    {
+        "item_id": 244,
+        "conversations": [
+            {
+                "role": "user",
+                "content": "You are an exploration master that wants to finish every goal you are given. Every round I will give you an observation, and you have to respond an action and your thought based on the observation to finish the given task. You are placed in a room and you need to accomplish the given goal with actions.\n\nYou can use the following actions: \n\n- turn right \n\n- turn left \n\n- move forward \n\n- go to <obj> <id> \n\n- pick up <obj> <id> \n\n- go through <door> <id>: <door> must be an open door. \n\n- toggle and go through <door> <id>: <door> can be a closed door or a locked door. If you want to open a locked door, you need to carry a key that is of the same color as the locked door. \n\n- toggle: there is a closed or locked door right in front of you and you can toggle it.\nYour response should use the following format:\nThought:\n<Your Thought>\n\nAction:\n<Your Action>"
+            },
+            {
+                "role": "assistant",
+                "content": "OK. I'll follow your instructions and try my best to solve the task."
+            },
+            {
+                "role": "user",
+                "content": "Your goal: go to the yellow box\nIn front of you in this room, you can see several objects: There is a blue key 1 right in front of you 2 steps away.  There is a grey box 1 1 steps in front of you and 1 steps to your left.  There is a blue box 1 0 steps in front of you and 2 steps to your left.  The room has walls around you. You are facing a wall 3 steps away. You are not carrying anything.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"pickup blue key 1\", \"pickup grey box 1\", \"pickup blue box 1\", \"go to blue key 1\", \"go to grey box 1\", \"go to blue box 1\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: You are facing a wall\nAction:\ngo to blue box 1"
+            },
+            {
+                "role": "user",
+                "content": "In front of you in this room, you can see several objects: There is a blue box 1 right in front of you 1 steps away.  There is a grey box 1 0 steps in front of you and 1 steps to your right.  There is a yellow box 1 1 steps in front of you and 2 steps to your left.  There is a red box 1 1 steps in front of you and 3 steps to your left.  The room has walls around you. You are facing a box 1 steps away. You are not carrying anything.\nAvailable actions: [\"turn left\", \"turn right\", \"pickup blue box 1\", \"pickup grey box 1\", \"pickup yellow box 1\", \"pickup red box 1\", \"go to blue box 1\", \"go to grey box 1\", \"go to yellow box 1\", \"go to red box 1\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: I have to go to the yellow box.\n1. Pickup yellow box 1\n\nAction:\ngo to yellow box 1"
+            },
+            {
+                "role": "user",
+                "content": "In front of you in this room, you can see several objects: There is a yellow box 1 right in front of you 1 steps away.  There is a red box 1 1 steps in front of you and 1 steps to your left.  There is a blue box 1 1 steps in front of you and 2 steps to your right.  There is a grey box 1 0 steps in front of you and 3 steps to your right.  The room has walls around you. You are facing a box 1 steps away. You are not carrying anything.\n The task is completed.\nAvailable actions: [\"turn left\", \"turn right\", \"pickup yellow box 1\", \"pickup red box 1\", \"pickup blue box 1\", \"pickup grey box 1\", \"go to yellow box 1\", \"go to red box 1\", \"go to blue box 1\", \"go to grey box 1\", \"check available actions\"]"
+            }
+        ],
+        "reward": 0.915625
+    },
+    {
+        "item_id": 244,
+        "conversations": [
+            {
+                "role": "user",
+                "content": "You are an exploration master that wants to finish every goal you are given. Every round I will give you an observation, and you have to respond an action and your thought based on the observation to finish the given task. You are placed in a room and you need to accomplish the given goal with actions.\n\nYou can use the following actions: \n\n- turn right \n\n- turn left \n\n- move forward \n\n- go to <obj> <id> \n\n- pick up <obj> <id> \n\n- go through <door> <id>: <door> must be an open door. \n\n- toggle and go through <door> <id>: <door> can be a closed door or a locked door. If you want to open a locked door, you need to carry a key that is of the same color as the locked door. \n\n- toggle: there is a closed or locked door right in front of you and you can toggle it.\nYour response should use the following format:\nThought:\n<Your Thought>\n\nAction:\n<Your Action>"
+            },
+            {
+                "role": "assistant",
+                "content": "OK. I'll follow your instructions and try my best to solve the task."
+            },
+            {
+                "role": "user",
+                "content": "Your goal: go to the yellow box\nIn front of you in this room, you can see several objects: There is a blue key 1 right in front of you 2 steps away.  There is a grey box 1 1 steps in front of you and 1 steps to your left.  There is a blue box 1 0 steps in front of you and 2 steps to your left.  The room has walls around you. You are facing a wall 3 steps away. You are not carrying anything.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"pickup blue key 1\", \"pickup grey box 1\", \"pickup blue box 1\", \"go to blue key 1\", \"go to grey box 1\", \"go to blue box 1\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: Go to the blue box\nAction:\ngo to blue box 1"
+            },
+            {
+                "role": "user",
+                "content": "In front of you in this room, you can see several objects: There is a blue box 1 right in front of you 1 steps away.  There is a grey box 1 0 steps in front of you and 1 steps to your right.  There is a yellow box 1 1 steps in front of you and 2 steps to your left.  There is a red box 1 1 steps in front of you and 3 steps to your left.  The room has walls around you. You are facing a box 1 steps away. You are not carrying anything.\nAvailable actions: [\"turn left\", \"turn right\", \"pickup blue box 1\", \"pickup grey box 1\", \"pickup yellow box 1\", \"pickup red box 1\", \"go to blue box 1\", \"go to grey box 1\", \"go to yellow box 1\", \"go to red box 1\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: Now I find the yellow box!\nAction:\ngo to yellow box 1"
+            },
+            {
+                "role": "user",
+                "content": "In front of you in this room, you can see several objects: There is a yellow box 1 right in front of you 1 steps away.  There is a red box 1 1 steps in front of you and 1 steps to your left.  There is a blue box 1 1 steps in front of you and 2 steps to your right.  There is a grey box 1 0 steps in front of you and 3 steps to your right.  The room has walls around you. You are facing a box 1 steps away. You are not carrying anything.\n The task is completed.\nAvailable actions: [\"turn left\", \"turn right\", \"pickup yellow box 1\", \"pickup red box 1\", \"pickup blue box 1\", \"pickup grey box 1\", \"go to yellow box 1\", \"go to red box 1\", \"go to blue box 1\", \"go to grey box 1\", \"check available actions\"]"
+            }
+        ],
+        "reward": 0.915625
+    },
+    {
+        "item_id": 2218,
+        "conversations": [
+            {
+                "role": "user",
+                "content": "You are an exploration master that wants to finish every goal you are given. Every round I will give you an observation, and you have to respond an action and your thought based on the observation to finish the given task. You are placed in a room and you need to accomplish the given goal with actions.\n\nYou can use the following actions: \n\n- turn right \n\n- turn left \n\n- move forward \n\n- go to <obj> <id> \n\n- pick up <obj> <id> \n\n- go through <door> <id>: <door> must be an open door. \n\n- toggle and go through <door> <id>: <door> can be a closed door or a locked door. If you want to open a locked door, you need to carry a key that is of the same color as the locked door. \n\n- toggle: there is a closed or locked door right in front of you and you can toggle it.\nYour response should use the following format:\nThought:\n<Your Thought>\n\nAction:\n<Your Action>"
+            },
+            {
+                "role": "assistant",
+                "content": "OK. I'll follow your instructions and try my best to solve the task."
+            },
+            {
+                "role": "user",
+                "content": "Your goal: pick up the purple ball on your left\nIn front of you in this room, you can see several objects: There is a red box 1 0 steps in front of you and 1 steps to your left.  There is a purple ball 1 1 steps in front of you and 1 steps to your left.  There is a purple box 1 0 steps in front of you and 2 steps to your left.  There is a grey ball 1 2 steps in front of you and 1 steps to your left.  There is a red box 2 right in front of you 4 steps away.  There is a red key 1 3 steps in front of you and 3 steps to your left.  The room has walls around you. You are facing a box 4 steps away. You are not carrying anything.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"pickup red box 1\", \"pickup purple ball 1\", \"pickup purple box 1\", \"pickup grey ball 1\", \"pickup red box 2\", \"pickup red key 1\", \"go to red box 1\", \"go to purple ball 1\", \"go to purple box 1\", \"go to grey ball 1\", \"go to red box 2\", \"go to red key 1\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: pickup purple ball 1\nAction:\npickup purple ball 1"
+            },
+            {
+                "role": "user",
+                "content": "In front of you in this room, you can see several objects: There is a red box 1 1 steps in front of you and 1 steps to your left.  There is a grey ball 1 1 steps in front of you and 1 steps to your right.  There is a purple box 1 2 steps in front of you and 1 steps to your left.  There is a red box 2 0 steps in front of you and 3 steps to your right.  There is a red ball 1 3 steps in front of you and 2 steps to your left.  There is a red key 1 3 steps in front of you and 2 steps to your right.  There is a red key 2 5 steps in front of you and 2 steps to your right.  The room has walls around you. You are facing a wall 6 steps away. You are carrying a purple ball.\n The task is completed.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"drop\", \"go to red box 1\", \"go to grey ball 1\", \"go to purple box 1\", \"go to red box 2\", \"go to red ball 1\", \"go to red key 1\", \"go to red key 2\", \"check available actions\"]"
+            }
+        ],
+        "reward": 0.9578125
+    },
+    {
+        "item_id": 2218,
+        "conversations": [
+            {
+                "role": "user",
+                "content": "You are an exploration master that wants to finish every goal you are given. Every round I will give you an observation, and you have to respond an action and your thought based on the observation to finish the given task. You are placed in a room and you need to accomplish the given goal with actions.\n\nYou can use the following actions: \n\n- turn right \n\n- turn left \n\n- move forward \n\n- go to <obj> <id> \n\n- pick up <obj> <id> \n\n- go through <door> <id>: <door> must be an open door. \n\n- toggle and go through <door> <id>: <door> can be a closed door or a locked door. If you want to open a locked door, you need to carry a key that is of the same color as the locked door. \n\n- toggle: there is a closed or locked door right in front of you and you can toggle it.\nYour response should use the following format:\nThought:\n<Your Thought>\n\nAction:\n<Your Action>"
+            },
+            {
+                "role": "assistant",
+                "content": "OK. I'll follow your instructions and try my best to solve the task."
+            },
+            {
+                "role": "user",
+                "content": "Your goal: pick up the purple ball on your left\nIn front of you in this room, you can see several objects: There is a red box 1 0 steps in front of you and 1 steps to your left.  There is a purple ball 1 1 steps in front of you and 1 steps to your left.  There is a purple box 1 0 steps in front of you and 2 steps to your left.  There is a grey ball 1 2 steps in front of you and 1 steps to your left.  There is a red box 2 right in front of you 4 steps away.  There is a red key 1 3 steps in front of you and 3 steps to your left.  The room has walls around you. You are facing a box 4 steps away. You are not carrying anything.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"pickup red box 1\", \"pickup purple ball 1\", \"pickup purple box 1\", \"pickup grey ball 1\", \"pickup red box 2\", \"pickup red key 1\", \"go to red box 1\", \"go to purple ball 1\", \"go to purple box 1\", \"go to grey ball 1\", \"go to red box 2\", \"go to red key 1\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: Pick up purple ball 1.\nAction:\npickup purple ball 1"
+            },
+            {
+                "role": "user",
+                "content": "In front of you in this room, you can see several objects: There is a red box 1 1 steps in front of you and 1 steps to your left.  There is a grey ball 1 1 steps in front of you and 1 steps to your right.  There is a purple box 1 2 steps in front of you and 1 steps to your left.  There is a red box 2 0 steps in front of you and 3 steps to your right.  There is a red ball 1 3 steps in front of you and 2 steps to your left.  There is a red key 1 3 steps in front of you and 2 steps to your right.  There is a red key 2 5 steps in front of you and 2 steps to your right.  The room has walls around you. You are facing a wall 6 steps away. You are carrying a purple ball.\n The task is completed.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"drop\", \"go to red box 1\", \"go to grey ball 1\", \"go to purple box 1\", \"go to red box 2\", \"go to red ball 1\", \"go to red key 1\", \"go to red key 2\", \"check available actions\"]"
+            }
+        ],
+        "reward": 0.9578125
+    },
+    {
+        "item_id": 1407,
+        "conversations": [
+            {
+                "role": "user",
+                "content": "You are an exploration master that wants to finish every goal you are given. Every round I will give you an observation, and you have to respond an action and your thought based on the observation to finish the given task. You are placed in a room and you need to accomplish the given goal with actions.\n\nYou can use the following actions: \n\n- turn right \n\n- turn left \n\n- move forward \n\n- go to <obj> <id> \n\n- pick up <obj> <id> \n\n- go through <door> <id>: <door> must be an open door. \n\n- toggle and go through <door> <id>: <door> can be a closed door or a locked door. If you want to open a locked door, you need to carry a key that is of the same color as the locked door. \n\n- toggle: there is a closed or locked door right in front of you and you can toggle it.\nYour response should use the following format:\nThought:\n<Your Thought>\n\nAction:\n<Your Action>"
+            },
+            {
+                "role": "assistant",
+                "content": "OK. I'll follow your instructions and try my best to solve the task."
+            },
+            {
+                "role": "user",
+                "content": "Your goal: go to a key\nIn front of you in this room, you can see several objects: There is a grey box 1 1 steps in front of you and 1 steps to your left.  The room has walls around you. You are facing a wall 2 steps away. You are not carrying anything.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"pickup grey box 1\", \"go to grey box 1\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: go to a key\nAction:\ngo to grey box 1"
+            },
+            {
+                "role": "user",
+                "content": "In front of you in this room, you can see several objects: There is a grey box 1 right in front of you 1 steps away.  There is a green closed door 1 2 steps in front of you and 2 steps to your left.  There is a blue closed door 1 1 steps in front of you and 3 steps to your left.  The room has walls around you. You are facing a box 1 steps away. You are not carrying anything.\nAvailable actions: [\"turn left\", \"turn right\", \"pickup grey box 1\", \"toggle and go through green closed door 1\", \"toggle and go through blue closed door 1\", \"go to grey box 1\", \"go to green closed door 1\", \"go to blue closed door 1\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: It\u2019s decided that going to the grey box 1 is going to finish the goal set.\nAction:\ngo to grey box 1"
+            },
+            {
+                "role": "user",
+                "content": "No change in state.\nAvailable actions: [\"turn left\", \"turn right\", \"pickup grey box 1\", \"toggle and go through green closed door 1\", \"toggle and go through blue closed door 1\", \"go to grey box 1\", \"go to green closed door 1\", \"go to blue closed door 1\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: No change in state.\nAction:\ngo to green closed door 1"
+            },
+            {
+                "role": "user",
+                "content": "In front of you in this room, you can see several objects: There is a green closed door 1 right in front of you 1 steps away.  There is a blue closed door 1 0 steps in front of you and 1 steps to your left.  There is a grey box 1 0 steps in front of you and 2 steps to your right.  The room has walls around you. You are not carrying anything.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"pickup grey box 1\", \"toggle and go through green closed door 1\", \"toggle\", \"toggle and go through blue closed door 1\", \"go to green closed door 1\", \"go to blue closed door 1\", \"go to grey box 1\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: Going to a key will finish your goal.\nAction:\ntoggle"
+            },
+            {
+                "role": "user",
+                "content": "In front of you in this room, you can see several objects: There is a green open door 1 right in front of you 1 steps away.  There is a blue closed door 1 0 steps in front of you and 1 steps to your left.  There is a grey box 1 0 steps in front of you and 2 steps to your right.  There is a yellow closed door 1 3 steps in front of you and 1 steps to your left.  There is a blue key 1 2 steps in front of you and 2 steps to your right.  The room has walls around you. You are facing a wall 5 steps away. You are not carrying anything.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"pickup grey box 1\", \"pickup blue key 1\", \"go through green open door 1\", \"toggle and go through blue closed door 1\", \"toggle and go through yellow closed door 1\", \"go to green open door 1\", \"go to blue closed door 1\", \"go to grey box 1\", \"go to yellow closed door 1\", \"go to blue key 1\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: No change in state.\nAction:\ngo to yellow closed door 1"
+            },
+            {
+                "role": "user",
+                "content": "In front of you in this room, you can see several objects: There is a yellow closed door 1 right in front of you 1 steps away.  There is a green open door 1 0 steps in front of you and 2 steps to your left.  There is a blue closed door 1 1 steps in front of you and 3 steps to your left.  The room has walls around you. You are not carrying anything.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"toggle and go through yellow closed door 1\", \"toggle\", \"go through green open door 1\", \"toggle and go through blue closed door 1\", \"go to yellow closed door 1\", \"go to green open door 1\", \"go to blue closed door 1\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: Yes\nAction:\ntoggle and go through green open door 1"
+            },
+            {
+                "role": "user",
+                "content": "The action is not recognized. Please check valid actions.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"toggle and go through yellow closed door 1\", \"toggle\", \"go through green open door 1\", \"toggle and go through blue closed door 1\", \"go to yellow closed door 1\", \"go to green open door 1\", \"go to blue closed door 1\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: I am not sure which action you mean.\nAction:\ntoggle and go through blue closed door 1"
+            },
+            {
+                "role": "user",
+                "content": "In front of you in this room, you can see several objects: There is a green ball 1 2 steps in front of you and 1 steps to your left.  The room has walls around you. You are facing a wall 4 steps away. You are not carrying anything.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"pickup green ball 1\", \"go to green ball 1\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: I didn't receive anything.\nAction:\ngo to green ball 1"
+            },
+            {
+                "role": "user",
+                "content": "In front of you in this room, you can see several objects: There is a green ball 1 right in front of you 1 steps away.  There is a blue open door 1 0 steps in front of you and 2 steps to your left.  The room has walls around you. You are facing a wall 3 steps away. You are not carrying anything.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"pickup green ball 1\", \"go through blue open door 1\", \"go to green ball 1\", \"go to blue open door 1\", \"check available actions\"]"
+            }
+        ],
+        "reward": 0
+    },
+    {
+        "item_id": 1407,
+        "conversations": [
+            {
+                "role": "user",
+                "content": "You are an exploration master that wants to finish every goal you are given. Every round I will give you an observation, and you have to respond an action and your thought based on the observation to finish the given task. You are placed in a room and you need to accomplish the given goal with actions.\n\nYou can use the following actions: \n\n- turn right \n\n- turn left \n\n- move forward \n\n- go to <obj> <id> \n\n- pick up <obj> <id> \n\n- go through <door> <id>: <door> must be an open door. \n\n- toggle and go through <door> <id>: <door> can be a closed door or a locked door. If you want to open a locked door, you need to carry a key that is of the same color as the locked door. \n\n- toggle: there is a closed or locked door right in front of you and you can toggle it.\nYour response should use the following format:\nThought:\n<Your Thought>\n\nAction:\n<Your Action>"
+            },
+            {
+                "role": "assistant",
+                "content": "OK. I'll follow your instructions and try my best to solve the task."
+            },
+            {
+                "role": "user",
+                "content": "Your goal: go to a key\nIn front of you in this room, you can see several objects: There is a grey box 1 1 steps in front of you and 1 steps to your left.  The room has walls around you. You are facing a wall 2 steps away. You are not carrying anything.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"pickup grey box 1\", \"go to grey box 1\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: Go to a key.\nAction:\ngo to grey box 1"
+            },
+            {
+                "role": "user",
+                "content": "In front of you in this room, you can see several objects: There is a grey box 1 right in front of you 1 steps away.  There is a green closed door 1 2 steps in front of you and 2 steps to your left.  There is a blue closed door 1 1 steps in front of you and 3 steps to your left.  The room has walls around you. You are facing a box 1 steps away. You are not carrying anything.\nAvailable actions: [\"turn left\", \"turn right\", \"pickup grey box 1\", \"toggle and go through green closed door 1\", \"toggle and go through blue closed door 1\", \"go to grey box 1\", \"go to green closed door 1\", \"go to blue closed door 1\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: No action needed.\nAction:\ngo to green closed door 1"
+            },
+            {
+                "role": "user",
+                "content": "In front of you in this room, you can see several objects: There is a green closed door 1 right in front of you 1 steps away.  There is a blue closed door 1 0 steps in front of you and 1 steps to your left.  There is a grey box 1 0 steps in front of you and 2 steps to your right.  The room has walls around you. You are not carrying anything.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"pickup grey box 1\", \"toggle and go through green closed door 1\", \"toggle\", \"toggle and go through blue closed door 1\", \"go to green closed door 1\", \"go to blue closed door 1\", \"go to grey box 1\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: Go to a key.\nAction:\ntoggle and go through blue closed door 1"
+            },
+            {
+                "role": "user",
+                "content": "In front of you in this room, you can see several objects: There is a green ball 1 2 steps in front of you and 1 steps to your left.  The room has walls around you. You are facing a wall 4 steps away. You are not carrying anything.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"pickup green ball 1\", \"go to green ball 1\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: Go to a key.\nAction:\ngo to green ball 1"
+            },
+            {
+                "role": "user",
+                "content": "In front of you in this room, you can see several objects: There is a green ball 1 right in front of you 1 steps away.  There is a blue open door 1 0 steps in front of you and 2 steps to your left.  The room has walls around you. You are facing a wall 3 steps away. You are not carrying anything.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"pickup green ball 1\", \"go through blue open door 1\", \"go to green ball 1\", \"go to blue open door 1\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: Finished.\nAction: go through blue open door 1"
+            },
+            {
+                "role": "user",
+                "content": "In front of you in this room, you can see several objects: There is a green closed door 1 1 steps in front of you and 1 steps to your left.  There is a grey box 1 right in front of you 3 steps away.  The room has walls around you. You are facing a box 3 steps away. You are not carrying anything.\nAvailable actions: [\"turn left\", \"turn right\", \"move forward\", \"pickup grey box 1\", \"toggle and go through green closed door 1\", \"go to green closed door 1\", \"go to grey box 1\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: Next task?\nAction:\ngo to grey box 1"
+            },
+            {
+                "role": "user",
+                "content": "In front of you in this room, you can see several objects: There is a grey box 1 right in front of you 1 steps away.  The room has walls around you. You are facing a box 1 steps away. You are not carrying anything.\nAvailable actions: [\"turn left\", \"turn right\", \"pickup grey box 1\", \"go to grey box 1\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: Next task.\nAction: go to grey box 1"
+            },
+            {
+                "role": "user",
+                "content": "No change in state.\nAvailable actions: [\"turn left\", \"turn right\", \"pickup grey box 1\", \"go to grey box 1\", \"check available actions\"]"
+            },
+            {
+                "role": "assistant",
+                "content": "Thought: Finished.\nAction:\ngo to grey box 1"
+            },
+            {
+                "role": "user",
+                "content": "No change in state.\nAvailable actions: [\"turn left\", \"turn right\", \"pickup grey box 1\", \"go to grey box 1\", \"check available actions\"]"
+            }
+        ],
+        "reward": 0
+    }
+]

@@ -183,3 +183,29 @@ Another failure happened because log-prob label indices were not `int64`. We pat
 3. Extract reward and loss metrics from W&B offline logs or Slurm console logs.
 4. Visualize a few `executer_logs` examples to inspect the agent's reasoning and actions.
 5. Increase training length after the first benchmark run works.
+
+## Final Artifact Status
+
+Generated assignment artifacts are in:
+
+```bash
+pilot_outputs/final_artifacts/
+```
+
+Key files:
+
+```bash
+pilot_outputs/final_artifacts/babyai_smoke_training_curves.png
+pilot_outputs/final_artifacts/babyai_benchmark_training_curves.png
+pilot_outputs/final_artifacts/textworldexpress_training_curves.png
+pilot_outputs/final_artifacts/smoke_comparison_training_curves.png
+pilot_outputs/final_artifacts/babyai_benchmark_metrics.csv
+pilot_outputs/final_artifacts/case_studies.md
+pilot_outputs/final_artifacts/completion_report.md
+```
+
+Generation script:
+
+```bash
+conda run -n agentgym-rl python scripts/build_pilot_artifacts.py
+```
