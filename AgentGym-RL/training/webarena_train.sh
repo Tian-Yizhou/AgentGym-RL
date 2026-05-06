@@ -9,7 +9,7 @@
 #SBATCH --job-name=webarena
 
 # launch env server in background via the generic launcher
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+SCRIPT_DIR="AgentGym-RL/training"
 SERVER_PORT=36001
 bash "${SCRIPT_DIR}/start_env_server.sh" webshop "${SERVER_PORT}" &
 SERVER_PID=$!
@@ -32,7 +32,7 @@ export VLLM_ATTENTION_BACKEND=XFORMERS
 task_name="webarena"
 
 cd AgentGym-RL
-source activate
+source "$(conda info --base)/etc/profile.d/conda.sh"
 conda activate agentgym-rl
 export VLLM_ATTENTION_BACKEND=XFORMERS
 export WANDB_BASE_URL=https://api.bandw.top

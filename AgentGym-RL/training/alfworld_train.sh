@@ -1,3 +1,12 @@
+#!/bin/bash
+#SBATCH --job-name=textcraft
+#SBATCH --partition=job
+#SBATCH --time=48:00:00
+#SBATCH --gres=gpu:1
+#SBATCH --cpus-per-task=2
+#SBATCH --mem=120G
+#SBATCH --output=output_%j.log
+#SBATCH --error=error_%j.log
 
 # launch env server in background via the generic launcher
 SCRIPT_DIR="AgentGym-RL/training"
@@ -23,7 +32,7 @@ export VLLM_ATTENTION_BACKEND=XFORMERS
 task_name="alfworld"
 
 cd AgentGym-RL
-source activate
+source "$(conda info --base)/etc/profile.d/conda.sh"
 conda activate agentgym-rl
 export VLLM_ATTENTION_BACKEND=XFORMERS
 export WANDB_BASE_URL=https://api.bandw.top
