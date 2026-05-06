@@ -71,7 +71,17 @@ if [ ! -d "${WORK_DIR}" ]; then
   exit 1
 fi
 
-source activate
+# Use conda's shell hook instead of `source activate` — the legacy
+# `activate` script reads $1/$2 from the parent shell, which here are
+# the env_name/port positional args, causing it to abort with
+# "ArgumentError: activate does not accept more than one argument".
+CONDA_BASE="$(conda info --base 2>/dev/null)"
+if [ -z "${CONDA_BASE}" ] || [ ! -f "${CONDA_BASE}/etc/profile.d/conda.sh" ]; then
+  echo "Cannot locate conda installation (conda info --base failed)." >&2
+  exit 1
+fi
+# shellcheck disable=SC1091
+source "${CONDA_BASE}/etc/profile.d/conda.sh"
 conda activate "${CONDA_ENV}"
 cd "${WORK_DIR}"
 
