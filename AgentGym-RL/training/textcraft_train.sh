@@ -1,14 +1,15 @@
 #!/bin/bash
-#SBATCH --partition=gengpu
-#SBATCH --time=24:00:00
-#SBATCH --gres=gpu:1
-#SBATCH --nodes=1
-#SBATCH --constraint=sxm
-#SBATCH --ntasks=6
-#SBATCH --mem=120G
 #SBATCH --job-name=textcraft
+#SBATCH --partition=job
+#SBATCH --time=48:00:00
+#SBATCH --gres=gpu:1
+#SBATCH --cpus-per-task=2
+#SBATCH --mem=120G
+#SBATCH --output=output_%j.log
+#SBATCH --error=error_%j.log
 
 # launch env server in background
+cd AgentGym/agentenv-textcraft
 source activate
 conda activate agentenv-textcraft
 SERVER_PORT=36003
