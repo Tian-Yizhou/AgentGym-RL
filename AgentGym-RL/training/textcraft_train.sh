@@ -9,7 +9,7 @@
 #SBATCH --error=error_%j.log
 
 # launch env server in background via the generic launcher
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+SCRIPT_DIR="AgentGym-RL/training"
 SERVER_PORT=36003
 bash "${SCRIPT_DIR}/start_env_server.sh" textcraft "${SERVER_PORT}" &
 SERVER_PID=$!

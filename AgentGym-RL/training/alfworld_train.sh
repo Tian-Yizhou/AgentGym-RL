@@ -1,6 +1,6 @@
 
 # launch env server in background via the generic launcher
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+SCRIPT_DIR="AgentGym-RL/training"
 SERVER_PORT=36004
 bash "${SCRIPT_DIR}/start_env_server.sh" alfworld "${SERVER_PORT}" &
 SERVER_PID=$!

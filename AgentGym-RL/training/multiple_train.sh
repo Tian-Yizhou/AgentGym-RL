@@ -22,7 +22,7 @@ set -uo pipefail
 
 # Resolve the repo root so the inner `cd AgentGym-RL` in each task script works
 # regardless of where this job was submitted from.
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+SCRIPT_DIR="AgentGym-RL/training"
 REPO_ROOT="$(cd "${SCRIPT_DIR}/../.." && pwd)"
 cd "${REPO_ROOT}"
 
