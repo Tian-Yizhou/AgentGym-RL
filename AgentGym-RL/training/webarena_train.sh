@@ -8,11 +8,22 @@
 #SBATCH --mem=120G
 #SBATCH --job-name=webarena
 
-# launch service
+# launch env server in background
 source activate
-conda init
 conda activate agentenv-webshop
-webshop --host 127.0.0.1 --port 36001
+SERVER_PORT=36001
+webshop --host 127.0.0.1 --port ${SERVER_PORT} &
+SERVER_PID=$!
+trap 'kill -TERM $SERVER_PID 2>/dev/null; wait $SERVER_PID 2>/dev/null' EXIT
+
+# wait until env server accepts TCP on the port
+echo "Waiting for webshop env server on 127.0.0.1:${SERVER_PORT} ..."
+for _ in $(seq 1 60); do
+  (echo > /dev/tcp/127.0.0.1/${SERVER_PORT}) >/dev/null 2>&1 && break
+  sleep 2
+done
+(echo > /dev/tcp/127.0.0.1/${SERVER_PORT}) >/dev/null 2>&1 || { echo "webshop env server failed to start" >&2; exit 1; }
+echo "webshop env server ready."
 
 set -x
 export VLLM_USE_MODELSCOPE=0
