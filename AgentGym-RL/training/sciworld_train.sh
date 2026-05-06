@@ -8,11 +8,10 @@
 #SBATCH --output=output_%j.log
 #SBATCH --error=error_%j.log
 
-# launch env server in background
-source activate
-conda activate agentenv-sciworld
+# launch env server in background via the generic launcher
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 SERVER_PORT=36002
-sciworld --host 127.0.0.1 --port ${SERVER_PORT} &
+bash "${SCRIPT_DIR}/start_env_server.sh" sciworld "${SERVER_PORT}" &
 SERVER_PID=$!
 trap 'kill -TERM $SERVER_PID 2>/dev/null; wait $SERVER_PID 2>/dev/null' EXIT
 
