@@ -2,7 +2,7 @@
 # Generic AgentGym env-server launcher.
 #
 # Usage: start_env_server.sh <env_name> <port> [host]
-#   env_name: textcraft | sciworld | alfworld | webshop | webarena | babyai | searchqa
+#   env_name: textcraft | sciworld | alfworld | webshop | webarena | babyai | searchqa | textworldexpress
 #   port:     TCP port to bind (e.g. 36003)
 #   host:     bind address (default 127.0.0.1)
 #
@@ -13,7 +13,7 @@
 
 set -euo pipefail
 
-ENV_NAME="${1:?env_name required: textcraft|sciworld|alfworld|webshop|webarena|babyai|searchqa}"
+ENV_NAME="${1:?env_name required: textcraft|sciworld|alfworld|webshop|webarena|babyai|searchqa|textworldexpress}"
 PORT="${2:?port required}"
 HOST="${3:-127.0.0.1}"
 
@@ -59,9 +59,14 @@ case "${ENV_NAME}" in
     WORK_DIR="${AGENTGYM_ROOT}/agentenv-searchqa"
     BIN="searchqa"
     ;;
+  textworldexpress)
+    CONDA_ENV="agentenv-textworldexpress"
+    WORK_DIR="${AGENTGYM_ROOT}/agentenv-textworldexpress"
+    BIN="textworldexpress"
+    ;;
   *)
     echo "Unknown env: ${ENV_NAME}" >&2
-    echo "Supported: textcraft sciworld alfworld webshop webarena babyai searchqa" >&2
+    echo "Supported: textcraft sciworld alfworld webshop webarena babyai searchqa textworldexpress" >&2
     exit 2
     ;;
 esac
