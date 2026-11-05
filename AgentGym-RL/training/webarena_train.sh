@@ -1,5 +1,4 @@
 #!/bin/bash
-#SBATCH --partition=gengpu
 #SBATCH --time=24:00:00
 #SBATCH --gres=gpu:1
 #SBATCH --nodes=1

@@ -1,6 +1,5 @@
 #!/bin/bash
 #SBATCH --job-name=textworldexpress
-#SBATCH --partition=gengpu
 #SBATCH --time=48:00:00
 #SBATCH --nodes=1
 #SBATCH --gres=gpu:1
@@ -15,6 +14,7 @@
 #   FLAVOR=ScalingInter-RL sbatch AgentGym-RL/training/textworldexpress_train.sh
 # Any variable of the example script (MODEL_PATH, ROUNDS, TOTAL_TRAINING_STEPS, ...) can be
 # exported before sbatch. Java comes from the agentenv-textworldexpress conda env (openjdk).
+# Account and partition come from SBATCH_ACCOUNT / SBATCH_PARTITION (see README.md).
 
 SCRIPT_DIR="AgentGym-RL/training"
 SERVER_PORT="${SERVER_PORT:-36006}"

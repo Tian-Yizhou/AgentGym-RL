@@ -1,6 +1,5 @@
 #!/bin/bash
 #SBATCH --job-name=sciworld
-#SBATCH --partition=job
 #SBATCH --time=48:00:00
 #SBATCH --gres=gpu:1
 #SBATCH --cpus-per-task=2

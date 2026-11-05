@@ -1,6 +1,5 @@
 #!/bin/bash
 #SBATCH --job-name=agrl_multi
-#SBATCH --partition=gengpu
 #SBATCH --time=48:00:00
 #SBATCH --nodes=1
 #SBATCH --constraint=sxm
