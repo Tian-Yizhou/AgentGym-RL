@@ -62,7 +62,6 @@ from a seed, with separate train, dev and test seed sets:
    - The stock Python wrapper starts one Java process per game, about 0.7 s each. AgentGym-RL creates one environment per rollout sample per step (e.g. 16 × 8 = 128).
    - Here, all environments share a small JVM pool, one lightweight `PythonInterface` per environment: 64 environments are created in 0.09 s, and the pool sustains about 1,900 steps/s across 128 concurrent environments.
    - We also found that `sorting` keeps JVM-global state. Two copies of the same sorting game in one JVM corrupt each other, which happens on every GRPO step because a prompt's `n` samples play the same game. Sorting environments therefore get their own JVM.
-   - A regression test checks every game for this kind of interference.
 3. **Reproducible, leak-free data splits.**
    - An item id `textworldexpress_<data_idx>` encodes the game, the fold and the seed. The folds are TextWorldExpress's own disjoint seed sets, which also use different object lists.
    - [`make_data.py`](https://github.com/Tian-Yizhou/AgentGym/tree/textworldexpress/agentenv-textworldexpress/scripts/make_data.py) generates the train, dev and test sets (1,600, 400 and 400 items by default) plus per-game category files, so evaluation reports results per game.
@@ -72,7 +71,6 @@ from a seed, with separate train, dev and test seed sets:
 5. **A working quick-start setup.**
    - `setup.sh` builds a consistent stack: torch 2.4.0, vLLM 0.6.3, flash-attn 2.7.3, transformers 4.51.3, datasets 3.x and trl 0.19.1. The upstream instructions resolve to conflicting versions and skip installing `agentenv`.
    - It creates the TextWorldExpress server env with Java from conda, so no system Java is needed, and generates the data.
-6. **Tests.** 50 server tests and 17 client tests (CPU only). Among other things they check that every game is solvable through the API, deterministic, isolated under concurrency and leak-free over thousands of episodes.
 
 ```mermaid
 flowchart LR
@@ -195,7 +193,7 @@ implementation notes are in the
 ├── setup.sh                         # quick-start setup (conda envs, data, model)
 ├── AgentGym/                        # submodule: fork of AgentGym (branch `textworldexpress`)
 │   ├── agentenv/                    # client library; envs/textworldexpress.py is the TWX client
-│   ├── agentenv-textworldexpress/   # TWX env server, data generator, tests
+│   ├── agentenv-textworldexpress/   # TWX env server and data generator
 │   └── agentenv-*/                  # original environments (babyai, sciworld, textcraft, webshop, ...)
 ├── AgentGym-RL/                     # RL trainer (verl fork)
 │   ├── verl/utils/agentgym/client.py  # task_name -> env client registry (+ textworldexpress)
@@ -212,7 +210,7 @@ The original AgentGym-RL environments keep working as before. Their servers are 
 [AgentGym-RL-Data-ID](https://huggingface.co/datasets/AgentGym/AgentGym-RL-Data-ID)
 (`hf download --repo-type dataset AgentGym/AgentGym-RL-Data-ID --local-dir AgentGym-RL/AgentItemId`).
 
-**Tests:**
+**Test**
 
 ```sh
 conda activate agentenv-textworldexpress && cd AgentGym/agentenv-textworldexpress
